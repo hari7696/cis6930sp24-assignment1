@@ -19,4 +19,7 @@ rad.json
 #License-file
 *.flf
 #Test results file
-TestResults.xml
+.pytest_cache
+__pycache__
+#text_files
+.txt

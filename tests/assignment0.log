@@ -1,0 +1,1 @@
+03/08/2024 17:30:38 - root - INFO - Args parsed Namespace(input='*.txt', names=True, dates=True, phones=True, address=True, output='files/', stats='stdout')
