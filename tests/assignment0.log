@@ -1,13 +1,14 @@
-03/09/2024 13:54:46 - root - INFO - Args parsed Namespace(input='text_files/*.txt', names=False, dates=False, phones=False, address=False, output='files/', stats='stdout')
-03/09/2024 13:54:46 - root - DEBUG - spacy model loaded
-03/09/2024 13:54:46 - root - DEBUG - text preprocessing done
-03/09/2024 13:54:46 - root - DEBUG - entity extraction with spacy done
-03/09/2024 13:54:46 - assignment1.regex_helper - DEBUG - regex matching started
-03/09/2024 13:54:46 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
-03/09/2024 13:54:46 - root - DEBUG - entity extraction with regex done
-03/09/2024 13:54:46 - root - DEBUG - censoring done
-03/09/2024 13:54:46 - root - DEBUG - for file 1.txt censoring dictionary: {'PERSON': [(268, 283, 'Phillip K Allen'), (290, 302, 'Tim Belden <'), (302, 312, 'Tim Belden'), (357, 370, 'Phillip Allen'), (381, 418, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (420, 427, 'Allen-P'), (440, 446, 'pallen'), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 146, 'tim.belden'), (306, 318, 'Belden/Enron')], 'DATE': [(69, 80, '14 May 2001'), (81, 89, '16:39:00'), (69, 75, '14 May'), (181, 184, '1.0'), (371, 378, 'Jan2002')], 'PHONE': [(13, 35, '18782981.1075855378110'), (75, 83, ' 2001 16'), (87, 95, '00 -0700')], 'ADDRESS': [(157, 164, 'Subject')]}
-03/09/2024 13:54:46 - root - DEBUG - preprocessed text Message-ID: <18782981.1075855378110.JavaMail.evans@thyme>
+03/09/2024 14:13:59 - root - INFO - Args parsed Namespace(input='text_files/*.txt', names=True, dates=True, phones=True, address=True, output='files/', stats='stderr')
+03/09/2024 14:14:00 - root - DEBUG - spacy model loaded
+03/09/2024 14:14:00 - assignment1.utility_helpers - DEBUG - Files in folder: ['1.txt', '2.txt', '3.txt', '4.txt', '5.txt']
+03/09/2024 14:14:00 - root - DEBUG - text preprocessing done
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with spacy done
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching started
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with regex done
+03/09/2024 14:14:00 - root - DEBUG - censoring done
+03/09/2024 14:14:00 - root - DEBUG - for file 1.txt censoring dictionary: {'PERSON': [(268, 283, 'Phillip K Allen'), (290, 302, 'Tim Belden <'), (302, 312, 'Tim Belden'), (357, 370, 'Phillip Allen'), (381, 418, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (420, 427, 'Allen-P'), (440, 446, 'pallen'), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 146, 'tim.belden'), (306, 318, 'Belden/Enron')], 'DATE': [(69, 80, '14 May 2001'), (81, 89, '16:39:00'), (69, 75, '14 May'), (181, 184, '1.0'), (371, 378, 'Jan2002')], 'PHONE': [(13, 35, '18782981.1075855378110'), (75, 83, ' 2001 16'), (87, 95, '00 -0700')], 'ADDRESS': [(157, 164, 'Subject')]}
+03/09/2024 14:14:00 - root - DEBUG - preprocessed text Message-ID: <18782981.1075855378110.JavaMail.evans@thyme>
 Date: Mon  14 May 2001 16:39:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: tim.belden@enron.com
@@ -26,16 +27,15 @@ X-FileName: pallen (Non-Privileged).pst
 Here is our forecast
 
  
-03/09/2024 13:54:46 - root - DEBUG - printing stats to stdout/ ouput directory
-03/09/2024 13:54:46 - root - DEBUG - censored file written to output directory
-03/09/2024 13:54:46 - root - DEBUG - text preprocessing done
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with spacy done
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching started
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with regex done
-03/09/2024 13:54:47 - root - DEBUG - censoring done
-03/09/2024 13:54:47 - root - DEBUG - for file 2.txt censoring dictionary: {'PERSON': [(321, 336, 'Phillip K Allen'), (434, 447, 'Phillip Allen'), (458, 495, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (497, 504, 'Allen-P'), (517, 523, 'pallen'), (739, 750, 'Bilal Bajwa'), (887, 900, 'Chuck Ames/NA'), (916, 952, 'David Baumbach/HOU/ECT@ECT  Jad Doan'), (1039, 1049, 'Anna Kulic'), (1070, 1087, 'Victor Guggenheim'), (1101, 1117, 'Alejandra Chavez'), (1223, 1258, 'Elizabeth L Hernandez/HOU/ECT@ECT  '), (1293, 1320, 'Jeff Royed/Corp/Enron@ENRON'), (1322, 1344, 'Kam Keiser/HOU/ECT@ECT'), (1346, 1362, 'Kimat Singla/HOU'), (1407, 1426, 'Kulvinder Fowler/NA'), (1440, 1444, 'Kyle'), (1468, 1485, 'Luchas Johnson/NA'), (1499, 1514, 'Maria Garza/HOU'), (1526, 1540, 'Patrick Ryder/'), (1556, 1588, "Ryan O'Rourke/ENRON@enronXgate  "), (1588, 1597, 'Yuan Tian'), (1616, 1653, 'Frank Ermis/HOU/ECT@ECT  Jane M Tholt'), (1667, 1696, 'Jay Reitm=\neyer/HOU/ECT@ECT  '), (1696, 1711, 'Keith Holst/HOU'), (1721, 1754, 'Matthew Lenhart/HOU/ECT@ECT  Mik='), (1778, 1797, 'Monique Sanchez/HOU'), (1807, 1831, 'Phillip K Allen/HOU/ECT='), (1894, 1904, 'Ina Norman'), (1920, 1945, 'Jackie Travis/HOU/ECT@ECT'), (1947, 1975, 'Michael J Gasper/HOU/ECT@ECT'), (1977, 1983, 'Brenda'), (2043, 2055, 'Mary Theresa'), (2080, 2094, 'Mike Potter/NA'), (2108, 2135, 'Natalie Baker/HOU/ECT@ECT  '), (2170, 2192, 'Albert Stromquist/Corp'), (2261, 2289, 'Derek Anderson/HOU/ECT@ECT  '), (2314, 2345, 'Camille Gerard/Corp/Enron@ENRON'), (2347, 2360, 'Cathy Lira/NA'), (2361, 2376, 'Enron@EN=\nRON  '), (2459, 2484, 'Lam Nguyen/NA/Enron@Enron'), (2486, 2495, 'Andy Pace'), (2512, 2524, 'Anna Santuc='), (2575, 2602, 'Clayton Vernon/Corp/Enron=\n'), (2610, 2637, 'David Ryan/Corp/Enron@ENRON'), (2639, 2678, 'Eric Smith/Contractor/Enron Communicat='), (2706, 2718, 'Grace Kim/NA'), (2732, 2744, 'Jason Kaniss'), (2821, 2832, 'Todd DeCoo='), (2853, 2865, 'Beth Jensen/'), (2883, 2901, 'Billi Harrill/NPNG'), (2917, 2942, 'Martha Sumner-Kenney/NPNG'), (2956, 2970, 'Phyllis Miller'), (3023, 3041, 'Theresa Byrne/NPNG'), (3115, 3121, 'John A'), (3147, 3174, 'John Millar/FGT/Enron@Enron'), (3176, 3196, 'Julie Armstrong/Corp'), (3246, 3255, 'Max Brown'), (3273, 3287, 'Randy Cantrell'), (3307, 3335, 'Tracy Scott/Corp/Enron@ENRON'), (3337, 3371, 'Charles T Muzzy/HOU/ECT@ECT  Cora='), (3434, 3448, 'Jessica White='), (3466, 3480, 'Kevin Brady/NA'), (3494, 3523, 'Kirk Lenart/HOU/ECT@ECT  Lisa'), (3575, 3600, 'Mark L Schrab/HOU/ECT@ECT'), (3639, 3655, 'Tammy Gilmore/NA'), (3702, 3716, 'Wes Dempsey/NA'), (3730, 3747, 'Barry Feldman/NYC'), (3763, 3793, 'Catherine Huynh/NA/Enron@Enron'), (4558, 4563, 'Login'), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 147, 'outlook.team'), (385, 400, 'Team/Corp/Enron'), (569, 573, 'Team'), (613, 637, 'Wilchynski/HR/Corp/Enron'), (653, 666, 'Ward/NA/Enron'), (683, 698, 'Hill/Corp/Enron'), (712, 731, 'Galloway/Corp/Enron'), (754, 761, 'A/Enron'), (774, 786, 'Pham/HOU/ECT'), (800, 811, 'Jones/ENRON'), (832, 848, 'Mills/Corp/Enron'), (863, 874, 'Rabon/ENRON'), (922, 938, 'Baumbach/HOU/ECT'), (948, 958, 'Doan/ENRON'), (985, 997, 'free/HOU/ECT'), (1013, 1025, 'Love/HOU/ECT'), (1044, 1055, 'Kulic/ENRON'), (1077, 1095, 'Guggenheim/HOU/ECT'), (1111, 1126, 'Chavez/NA/Enron'), (1141, 1151, 'Bike/Enron'), (1171, 1185, 'Frank/NA/Enron'), (1216, 1217, 'T'), (1235, 1252, 'Hernandez/HOU/ECT'), (1268, 1283, 'Shim/Corp/Enron'), (1298, 1314, 'Royed/Corp/Enron'), (1326, 1340, 'Keiser/HOU/ECT'), (1352, 1366, 'Singla/HOU/ECT'), (1382, 1394, 'Clause/ENRON'), (1417, 1432, 'Fowler/NA/Enron'), (1449, 1462, 'Lilly/HOU/ECT'), (1475, 1491, 'Johnson/NA/Enron'), (1505, 1518, 'Garza/HOU/ECT'), (1534, 1548, 'Ryder/NA/Enron'), (1561, 1575, "O'Rourke/ENRON"), (1601, 1608, 'A/Enron'), (1622, 1635, 'Ermis/HOU/ECT'), (1648, 1661, 'Tholt/HOU/ECT'), (1678, 1690, 'eyer/HOU/ECT'), (1702, 1715, 'Holst/HOU/ECT'), (1729, 1744, 'Lenhart/HOU/ECT'), (1757, 1772, 'Grigsby/HOU/ECT'), (1786, 1801, 'Sanchez/HOU/ECT'), (1848, 1859, 'Gay/HOU/ECT'), (1870, 1888, 'Kuykendall/HOU/ECT'), (1909, 1914, 'U/ECT'), (1927, 1941, 'Travis/HOU/ECT'), (1957, 1971, 'Gasper/HOU/ECT'), (1988, 2004, 'Fletcher/HOU/ECT'), (2017, 2035, 'Wukasch/Corp/Enron'), (2063, 2074, 'lin/HOU/ECT'), (2085, 2100, 'Potter/NA/Enron'), (2116, 2129, 'Baker/HOU/ECT'), (2145, 2162, 'Calcagno/NA/Enron'), (2177, 2198, 'Stromquist/Corp/Enron'), (2230, 2241, 'DEVELOPMENT'), (2267, 2283, 'Anderson/HOU/ECT'), (2296, 2308, 'Horn/HOU/ECT'), (2322, 2339, 'Gerard/Corp/Enron'), (2353, 2366, 'Lira/NA/Enron'), (2400, 2411, 'DEVELOPMENT'), (2448, 2451, 'ron'), (2463, 2478, 'Nguyen/NA/Enron'), (2491, 2504, 'Pace/NA/Enron'), (2525, 2536, 'ci/NA/Enron'), (2552, 2567, 'Guerra/NA/Enron'), (2616, 2631, 'Ryan/Corp/Enron'), (2679, 2683, 'ions'), (2712, 2724, 'Kim/NA/Enron'), (2738, 2750, 'Kaniss/ENRON'), (2771, 2787, 'Cline/Corp/Enron'), (2800, 2813, 'Imai/NA/Enron'), (2833, 2845, 'k/Corp/Enron'), (2858, 2875, 'Jensen/NPNG/Enron'), (2924, 2948, 'Sumner-Kenney/NPNG/Enron'), (2964, 2981, 'Miller/NPNG/Enron'), (2997, 3015, 'Olofson/NPNG/Enron'), (3031, 3047, 'Byrne/NPNG/Enron'), (3064, 3081, 'cCarty/ET&S/Enron'), (3095, 3107, 'Tu/FGT/Enron'), (3122, 3137, 'Ayres/FGT/Enron'), (3152, 3168, 'Millar/FGT/Enron'), (3182, 3202, 'Armstrong/Corp/Enron'), (3219, 3238, 'Schroeder/FGT/Enron'), (3250, 3265, 'Brown/OTS/Enron'), (3295, 3299, 'nron'), (3313, 3329, 'Scott/Corp/Enron'), (3347, 3360, 'Muzzy/HOU/ECT'), (3373, 3395, 'Pendergrass/Corp/Enron'), (3410, 3426, 'Espey/Corp/Enron'), (3450, 3458, 'NA/Enron'), (3472, 3486, 'Brady/NA/Enron'), (3499, 3513, 'Lenart/HOU/ECT'), (3526, 3540, 'Kinsey/HOU/ECT'), (3553, 3569, 'Straight/HOU/ECT'), (3582, 3596, 'Schrab/HOU/ECT'), (3610, 3631, 'Mahmassani/Corp/Enron'), (3645, 3661, 'Gilmore/NA/Enron'), (3680, 3694, 'Omber/NA/Enron'), (3706, 3722, 'Dempsey/NA/Enron'), (3736, 3753, 'Feldman/NYC/MGUSA'), (3773, 3787, 'Huynh/NA/Enron')], 'DATE': [(68, 79, '14 May 2001'), (80, 88, '13:39:00'), (580, 599, '05/11/2001 01:49 PM'), (4057, 4070, 'a few minutes'), (4593, 4600, '0937041'), (5554, 5571, 'normal work hours'), (68, 74, '14 May'), (199, 203, '5-14'), (222, 225, '1.0'), (448, 455, 'Jan2002'), (580, 590, '05/11/2001'), (3843, 3847, '5-14')], 'PHONE': [(13, 34, '5468446.1075855378133'), (74, 82, ' 2001 13'), (86, 94, '00 -0700'), (198, 203, ' 5-14'), (586, 593, '2001 01'), (3813, 3816, '092'), (3842, 3847, ' 5-14'), (4308, 4313, ' 2000'), (4353, 4358, ' 2000'), (4593, 4600, '0937041')], 'ADDRESS': [(908, 914, '@Enron'), (1031, 1038, 'Sladana'), (2213, 2216, 'Ch='), (4781, 4788, 'Jornada')]}
-03/09/2024 13:54:47 - root - DEBUG - preprocessed text Message-ID: <5468446.1075855378133.JavaMail.evans@thyme>
+03/09/2024 14:14:00 - root - DEBUG - printing stats to stderr
+03/09/2024 14:14:00 - root - DEBUG - text preprocessing done
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with spacy done
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching started
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with regex done
+03/09/2024 14:14:00 - root - DEBUG - censoring done
+03/09/2024 14:14:00 - root - DEBUG - for file 2.txt censoring dictionary: {'PERSON': [(321, 336, 'Phillip K Allen'), (434, 447, 'Phillip Allen'), (458, 495, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (497, 504, 'Allen-P'), (517, 523, 'pallen'), (739, 750, 'Bilal Bajwa'), (887, 900, 'Chuck Ames/NA'), (916, 952, 'David Baumbach/HOU/ECT@ECT  Jad Doan'), (1039, 1049, 'Anna Kulic'), (1070, 1087, 'Victor Guggenheim'), (1101, 1117, 'Alejandra Chavez'), (1223, 1258, 'Elizabeth L Hernandez/HOU/ECT@ECT  '), (1293, 1320, 'Jeff Royed/Corp/Enron@ENRON'), (1322, 1344, 'Kam Keiser/HOU/ECT@ECT'), (1346, 1362, 'Kimat Singla/HOU'), (1407, 1426, 'Kulvinder Fowler/NA'), (1440, 1444, 'Kyle'), (1468, 1485, 'Luchas Johnson/NA'), (1499, 1514, 'Maria Garza/HOU'), (1526, 1540, 'Patrick Ryder/'), (1556, 1588, "Ryan O'Rourke/ENRON@enronXgate  "), (1588, 1597, 'Yuan Tian'), (1616, 1653, 'Frank Ermis/HOU/ECT@ECT  Jane M Tholt'), (1667, 1696, 'Jay Reitm=\neyer/HOU/ECT@ECT  '), (1696, 1711, 'Keith Holst/HOU'), (1721, 1754, 'Matthew Lenhart/HOU/ECT@ECT  Mik='), (1778, 1797, 'Monique Sanchez/HOU'), (1807, 1831, 'Phillip K Allen/HOU/ECT='), (1894, 1904, 'Ina Norman'), (1920, 1945, 'Jackie Travis/HOU/ECT@ECT'), (1947, 1975, 'Michael J Gasper/HOU/ECT@ECT'), (1977, 1983, 'Brenda'), (2043, 2055, 'Mary Theresa'), (2080, 2094, 'Mike Potter/NA'), (2108, 2135, 'Natalie Baker/HOU/ECT@ECT  '), (2170, 2192, 'Albert Stromquist/Corp'), (2261, 2289, 'Derek Anderson/HOU/ECT@ECT  '), (2314, 2345, 'Camille Gerard/Corp/Enron@ENRON'), (2347, 2360, 'Cathy Lira/NA'), (2361, 2376, 'Enron@EN=\nRON  '), (2459, 2484, 'Lam Nguyen/NA/Enron@Enron'), (2486, 2495, 'Andy Pace'), (2512, 2524, 'Anna Santuc='), (2575, 2602, 'Clayton Vernon/Corp/Enron=\n'), (2610, 2637, 'David Ryan/Corp/Enron@ENRON'), (2639, 2678, 'Eric Smith/Contractor/Enron Communicat='), (2706, 2718, 'Grace Kim/NA'), (2732, 2744, 'Jason Kaniss'), (2821, 2832, 'Todd DeCoo='), (2853, 2865, 'Beth Jensen/'), (2883, 2901, 'Billi Harrill/NPNG'), (2917, 2942, 'Martha Sumner-Kenney/NPNG'), (2956, 2970, 'Phyllis Miller'), (3023, 3041, 'Theresa Byrne/NPNG'), (3115, 3121, 'John A'), (3147, 3174, 'John Millar/FGT/Enron@Enron'), (3176, 3196, 'Julie Armstrong/Corp'), (3246, 3255, 'Max Brown'), (3273, 3287, 'Randy Cantrell'), (3307, 3335, 'Tracy Scott/Corp/Enron@ENRON'), (3337, 3371, 'Charles T Muzzy/HOU/ECT@ECT  Cora='), (3434, 3448, 'Jessica White='), (3466, 3480, 'Kevin Brady/NA'), (3494, 3523, 'Kirk Lenart/HOU/ECT@ECT  Lisa'), (3575, 3600, 'Mark L Schrab/HOU/ECT@ECT'), (3639, 3655, 'Tammy Gilmore/NA'), (3702, 3716, 'Wes Dempsey/NA'), (3730, 3747, 'Barry Feldman/NYC'), (3763, 3793, 'Catherine Huynh/NA/Enron@Enron'), (4558, 4563, 'Login'), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 147, 'outlook.team'), (385, 400, 'Team/Corp/Enron'), (569, 573, 'Team'), (613, 637, 'Wilchynski/HR/Corp/Enron'), (653, 666, 'Ward/NA/Enron'), (683, 698, 'Hill/Corp/Enron'), (712, 731, 'Galloway/Corp/Enron'), (754, 761, 'A/Enron'), (774, 786, 'Pham/HOU/ECT'), (800, 811, 'Jones/ENRON'), (832, 848, 'Mills/Corp/Enron'), (863, 874, 'Rabon/ENRON'), (922, 938, 'Baumbach/HOU/ECT'), (948, 958, 'Doan/ENRON'), (985, 997, 'free/HOU/ECT'), (1013, 1025, 'Love/HOU/ECT'), (1044, 1055, 'Kulic/ENRON'), (1077, 1095, 'Guggenheim/HOU/ECT'), (1111, 1126, 'Chavez/NA/Enron'), (1141, 1151, 'Bike/Enron'), (1171, 1185, 'Frank/NA/Enron'), (1216, 1217, 'T'), (1235, 1252, 'Hernandez/HOU/ECT'), (1268, 1283, 'Shim/Corp/Enron'), (1298, 1314, 'Royed/Corp/Enron'), (1326, 1340, 'Keiser/HOU/ECT'), (1352, 1366, 'Singla/HOU/ECT'), (1382, 1394, 'Clause/ENRON'), (1417, 1432, 'Fowler/NA/Enron'), (1449, 1462, 'Lilly/HOU/ECT'), (1475, 1491, 'Johnson/NA/Enron'), (1505, 1518, 'Garza/HOU/ECT'), (1534, 1548, 'Ryder/NA/Enron'), (1561, 1575, "O'Rourke/ENRON"), (1601, 1608, 'A/Enron'), (1622, 1635, 'Ermis/HOU/ECT'), (1648, 1661, 'Tholt/HOU/ECT'), (1678, 1690, 'eyer/HOU/ECT'), (1702, 1715, 'Holst/HOU/ECT'), (1729, 1744, 'Lenhart/HOU/ECT'), (1757, 1772, 'Grigsby/HOU/ECT'), (1786, 1801, 'Sanchez/HOU/ECT'), (1848, 1859, 'Gay/HOU/ECT'), (1870, 1888, 'Kuykendall/HOU/ECT'), (1909, 1914, 'U/ECT'), (1927, 1941, 'Travis/HOU/ECT'), (1957, 1971, 'Gasper/HOU/ECT'), (1988, 2004, 'Fletcher/HOU/ECT'), (2017, 2035, 'Wukasch/Corp/Enron'), (2063, 2074, 'lin/HOU/ECT'), (2085, 2100, 'Potter/NA/Enron'), (2116, 2129, 'Baker/HOU/ECT'), (2145, 2162, 'Calcagno/NA/Enron'), (2177, 2198, 'Stromquist/Corp/Enron'), (2230, 2241, 'DEVELOPMENT'), (2267, 2283, 'Anderson/HOU/ECT'), (2296, 2308, 'Horn/HOU/ECT'), (2322, 2339, 'Gerard/Corp/Enron'), (2353, 2366, 'Lira/NA/Enron'), (2400, 2411, 'DEVELOPMENT'), (2448, 2451, 'ron'), (2463, 2478, 'Nguyen/NA/Enron'), (2491, 2504, 'Pace/NA/Enron'), (2525, 2536, 'ci/NA/Enron'), (2552, 2567, 'Guerra/NA/Enron'), (2616, 2631, 'Ryan/Corp/Enron'), (2679, 2683, 'ions'), (2712, 2724, 'Kim/NA/Enron'), (2738, 2750, 'Kaniss/ENRON'), (2771, 2787, 'Cline/Corp/Enron'), (2800, 2813, 'Imai/NA/Enron'), (2833, 2845, 'k/Corp/Enron'), (2858, 2875, 'Jensen/NPNG/Enron'), (2924, 2948, 'Sumner-Kenney/NPNG/Enron'), (2964, 2981, 'Miller/NPNG/Enron'), (2997, 3015, 'Olofson/NPNG/Enron'), (3031, 3047, 'Byrne/NPNG/Enron'), (3064, 3081, 'cCarty/ET&S/Enron'), (3095, 3107, 'Tu/FGT/Enron'), (3122, 3137, 'Ayres/FGT/Enron'), (3152, 3168, 'Millar/FGT/Enron'), (3182, 3202, 'Armstrong/Corp/Enron'), (3219, 3238, 'Schroeder/FGT/Enron'), (3250, 3265, 'Brown/OTS/Enron'), (3295, 3299, 'nron'), (3313, 3329, 'Scott/Corp/Enron'), (3347, 3360, 'Muzzy/HOU/ECT'), (3373, 3395, 'Pendergrass/Corp/Enron'), (3410, 3426, 'Espey/Corp/Enron'), (3450, 3458, 'NA/Enron'), (3472, 3486, 'Brady/NA/Enron'), (3499, 3513, 'Lenart/HOU/ECT'), (3526, 3540, 'Kinsey/HOU/ECT'), (3553, 3569, 'Straight/HOU/ECT'), (3582, 3596, 'Schrab/HOU/ECT'), (3610, 3631, 'Mahmassani/Corp/Enron'), (3645, 3661, 'Gilmore/NA/Enron'), (3680, 3694, 'Omber/NA/Enron'), (3706, 3722, 'Dempsey/NA/Enron'), (3736, 3753, 'Feldman/NYC/MGUSA'), (3773, 3787, 'Huynh/NA/Enron')], 'DATE': [(68, 79, '14 May 2001'), (80, 88, '13:39:00'), (580, 599, '05/11/2001 01:49 PM'), (4057, 4070, 'a few minutes'), (4593, 4600, '0937041'), (5554, 5571, 'normal work hours'), (68, 74, '14 May'), (199, 203, '5-14'), (222, 225, '1.0'), (448, 455, 'Jan2002'), (580, 590, '05/11/2001'), (3843, 3847, '5-14')], 'PHONE': [(13, 34, '5468446.1075855378133'), (74, 82, ' 2001 13'), (86, 94, '00 -0700'), (198, 203, ' 5-14'), (586, 593, '2001 01'), (3813, 3816, '092'), (3842, 3847, ' 5-14'), (4308, 4313, ' 2000'), (4353, 4358, ' 2000'), (4593, 4600, '0937041')], 'ADDRESS': [(908, 914, '@Enron'), (1031, 1038, 'Sladana'), (2213, 2216, 'Ch='), (4781, 4788, 'Jornada')]}
+03/09/2024 14:14:00 - root - DEBUG - preprocessed text Message-ID: <5468446.1075855378133.JavaMail.evans@thyme>
 Date: Mon  14 May 2001 13:39:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: outlook.team@enron.com
@@ -165,16 +165,15 @@ Will you be out of the office in the near future for vacation  leave  etc?
 
 
 
-03/09/2024 13:54:47 - root - DEBUG - printing stats to stdout/ ouput directory
-03/09/2024 13:54:47 - root - DEBUG - censored file written to output directory
-03/09/2024 13:54:47 - root - DEBUG - text preprocessing done
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with spacy done
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching started
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with regex done
-03/09/2024 13:54:47 - root - DEBUG - censoring done
-03/09/2024 13:54:47 - root - DEBUG - for file 3.txt censoring dictionary: {'PERSON': [(266, 281, 'Phillip K Allen'), (343, 356, 'Phillip Allen'), (367, 404, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (406, 413, 'Allen-P'), (426, 432, 'pallen'), (496, 503, 'Pauline'), (802, 809, 'Jacques'), (987, 994, 'Phillip'), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 141, 'jsmith'), (296, 302, 'jsmith')], 'DATE': [(71, 79, 'May 2001'), (80, 88, '11:26:00'), (68, 74, '11 May'), (179, 182, '1.0'), (357, 364, 'Jan2002')], 'PHONE': [(13, 34, '2594534.1075855378221'), (74, 82, ' 2001 11'), (86, 94, '00 -0700'), (546, 551, '3 000'), (556, 561, '5 000')], 'ADDRESS': []}
-03/09/2024 13:54:47 - root - DEBUG - preprocessed text Message-ID: <2594534.1075855378221.JavaMail.evans@thyme>
+03/09/2024 14:14:00 - root - DEBUG - printing stats to stderr
+03/09/2024 14:14:00 - root - DEBUG - text preprocessing done
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with spacy done
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching started
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with regex done
+03/09/2024 14:14:00 - root - DEBUG - censoring done
+03/09/2024 14:14:00 - root - DEBUG - for file 3.txt censoring dictionary: {'PERSON': [(266, 281, 'Phillip K Allen'), (343, 356, 'Phillip Allen'), (367, 404, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (406, 413, 'Allen-P'), (426, 432, 'pallen'), (496, 503, 'Pauline'), (802, 809, 'Jacques'), (987, 994, 'Phillip'), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 141, 'jsmith'), (296, 302, 'jsmith')], 'DATE': [(71, 79, 'May 2001'), (80, 88, '11:26:00'), (68, 74, '11 May'), (179, 182, '1.0'), (357, 364, 'Jan2002')], 'PHONE': [(13, 34, '2594534.1075855378221'), (74, 82, ' 2001 11'), (86, 94, '00 -0700'), (546, 551, '3 000'), (556, 561, '5 000')], 'ADDRESS': []}
+03/09/2024 14:14:00 - root - DEBUG - preprocessed text Message-ID: <2594534.1075855378221.JavaMail.evans@thyme>
 Date: Fri  11 May 2001 11:26:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: jsmith@austintx.com
@@ -195,16 +194,15 @@ Let me know when you get the quotes from Pauline.  I am expecting to pay somethi
 Jacques is ready to drop in a dollar amount on the release.  If the negotiations stall  it seems like I need to go ahead and cut off the utilities.  Hopefully things will go smoothly.
 
 Phillip
-03/09/2024 13:54:47 - root - DEBUG - printing stats to stdout/ ouput directory
-03/09/2024 13:54:47 - root - DEBUG - censored file written to output directory
-03/09/2024 13:54:47 - root - DEBUG - text preprocessing done
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with spacy done
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching started
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with regex done
-03/09/2024 13:54:47 - root - DEBUG - censoring done
-03/09/2024 13:54:47 - root - DEBUG - for file 4.txt censoring dictionary: {'PERSON': [(267, 282, 'Phillip K Allen'), (344, 357, 'Phillip Allen'), (368, 405, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (407, 414, 'Allen-P'), (427, 433, 'pallen'), (463, 476, 'Jacques Craig'), (539, 543, 'Wade'), (548, 555, 'Phillip'), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 142, 'jsmith'), (297, 303, 'jsmith')], 'DATE': [(69, 80, '10 May 2001'), (81, 89, '12:50:00'), (69, 75, '10 May'), (180, 183, '1.0'), (358, 365, 'Jan2002')], 'PHONE': [(13, 35, '19129466.1075855378242'), (75, 83, ' 2001 12'), (87, 95, '00 -0700')], 'ADDRESS': []}
-03/09/2024 13:54:47 - root - DEBUG - preprocessed text Message-ID: <19129466.1075855378242.JavaMail.evans@thyme>
+03/09/2024 14:14:00 - root - DEBUG - printing stats to stderr
+03/09/2024 14:14:00 - root - DEBUG - text preprocessing done
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with spacy done
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching started
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with regex done
+03/09/2024 14:14:00 - root - DEBUG - censoring done
+03/09/2024 14:14:00 - root - DEBUG - for file 4.txt censoring dictionary: {'PERSON': [(267, 282, 'Phillip K Allen'), (344, 357, 'Phillip Allen'), (368, 405, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (407, 414, 'Allen-P'), (427, 433, 'pallen'), (463, 476, 'Jacques Craig'), (539, 543, 'Wade'), (548, 555, 'Phillip'), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 142, 'jsmith'), (297, 303, 'jsmith')], 'DATE': [(69, 80, '10 May 2001'), (81, 89, '12:50:00'), (69, 75, '10 May'), (180, 183, '1.0'), (358, 365, 'Jan2002')], 'PHONE': [(13, 35, '19129466.1075855378242'), (75, 83, ' 2001 12'), (87, 95, '00 -0700')], 'ADDRESS': []}
+03/09/2024 14:14:00 - root - DEBUG - preprocessed text Message-ID: <19129466.1075855378242.JavaMail.evans@thyme>
 Date: Thu  10 May 2001 12:50:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: jsmith@austintx.com
@@ -225,16 +223,15 @@ Jeff
 Jacques Craig will draw up a release.  What is the status on the quote from Wade?  
 
 Phillip
-03/09/2024 13:54:47 - root - DEBUG - printing stats to stdout/ ouput directory
-03/09/2024 13:54:47 - root - DEBUG - censored file written to output directory
-03/09/2024 13:54:47 - root - DEBUG - text preprocessing done
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with spacy done
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching started
-03/09/2024 13:54:47 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
-03/09/2024 13:54:47 - root - DEBUG - entity extraction with regex done
-03/09/2024 13:54:47 - root - DEBUG - censoring done
-03/09/2024 13:54:47 - root - DEBUG - for file 5.txt censoring dictionary: {'PERSON': [(273, 288, 'Phillip K Allen'), (295, 327, 'John J Lavorato <John J Lavorato'), (378, 391, 'Phillip Allen'), (402, 439, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (441, 448, 'Allen-P'), (461, 467, 'pallen'), (36, 50, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 148, 'john.lavorato'), (319, 344, 'Lavorato/ENRON@enronXgate')], 'DATE': [(71, 79, 'May 2001'), (80, 88, '17:13:00'), (69, 79, '9 May 2001'), (186, 189, '1.0'), (392, 399, 'Jan2002')], 'PHONE': [(13, 35, '23936138.1075855378263'), (74, 82, ' 2001 17'), (86, 94, '00 -0700')], 'ADDRESS': []}
-03/09/2024 13:54:47 - root - DEBUG - preprocessed text Message-ID: <23936138.1075855378263.JavaMail.evans@thyme>
+03/09/2024 14:14:00 - root - DEBUG - printing stats to stderr
+03/09/2024 14:14:00 - root - DEBUG - text preprocessing done
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with spacy done
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching started
+03/09/2024 14:14:00 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/09/2024 14:14:00 - root - DEBUG - entity extraction with regex done
+03/09/2024 14:14:00 - root - DEBUG - censoring done
+03/09/2024 14:14:00 - root - DEBUG - for file 5.txt censoring dictionary: {'PERSON': [(273, 288, 'Phillip K Allen'), (295, 327, 'John J Lavorato <John J Lavorato'), (378, 391, 'Phillip Allen'), (402, 439, "Allen  Phillip K. 'Sent Mail\nX-Origin"), (441, 448, 'Allen-P'), (461, 467, 'pallen'), (36, 50, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 148, 'john.lavorato'), (319, 344, 'Lavorato/ENRON@enronXgate')], 'DATE': [(71, 79, 'May 2001'), (80, 88, '17:13:00'), (69, 79, '9 May 2001'), (186, 189, '1.0'), (392, 399, 'Jan2002')], 'PHONE': [(13, 35, '23936138.1075855378263'), (74, 82, ' 2001 17'), (86, 94, '00 -0700')], 'ADDRESS': []}
+03/09/2024 14:14:00 - root - DEBUG - preprocessed text Message-ID: <23936138.1075855378263.JavaMail.evans@thyme>
 Date: Wed  9 May 2001 17:13:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: john.lavorato@enron.com
@@ -251,214 +248,158 @@ X-Origin: Allen-P
 X-FileName: pallen (Non-Privileged).pst
 
 The west desk would like 2 analysts.
-03/09/2024 13:54:47 - root - DEBUG - printing stats to stdout/ ouput directory
-03/09/2024 13:54:47 - root - DEBUG - censored file written to output directory
-03/09/2024 13:54:47 - root - INFO - directory structure Structure of C:\Users\ghari\Documents\MS\DE\cis6930sp24-assignment1:
-[Folder] .git
-    [File]   COMMIT_EDITMSG
-    [File]   config
-    [File]   description
-    [File]   HEAD
-    [Folder] hooks
-        [File]   applypatch-msg.sample
-        [File]   commit-msg.sample
-        [File]   fsmonitor-watchman.sample
-        [File]   post-update.sample
-        [File]   pre-applypatch.sample
-        [File]   pre-commit.sample
-        [File]   pre-merge-commit.sample
-        [File]   pre-push.sample
-        [File]   pre-rebase.sample
-        [File]   pre-receive.sample
-        [File]   prepare-commit-msg.sample
-        [File]   push-to-checkout.sample
-        [File]   sendemail-validate.sample
-        [File]   update.sample
-    [File]   index
-    [Folder] info
-        [File]   exclude
-    [Folder] logs
-        [File]   HEAD
-        [Folder] refs
-            [Folder] heads
-                [File]   main
-            [Folder] remotes
-                [Folder] origin
-                    [File]   HEAD
-                    [File]   main
-    [Folder] objects
-        [Folder] 00
-            [File]   97d31339ee2e5ece11ef936f96f34222436408
-        [Folder] 01
-            [File]   17b68dfc488725161f41f4786fd6a9cccf4150
-        [Folder] 04
-            [File]   f188e0e6fe78c0636525dae7bcd4cec3fa1d2f
-        [Folder] 0b
-            [File]   be5185fda23572dd0f98483e8f80df6102377a
-            [File]   fd64c820fa63a17b3e690d40993e8ba0ca3cce
-        [Folder] 0f
-            [File]   372112af00b5ed06ce456acc3599f35a1001f9
-        [Folder] 11
-            [File]   4ad072cb4823fc362610a48dba58ecee85a065
-        [Folder] 20
-            [File]   da8fdcc0c6ed6ea4fae1dbd5ef28e4a02d895e
-        [Folder] 29
-            [File]   34082ec9984b5e5cfde62751d6d39d779f5354
-        [Folder] 2a
-            [File]   4b3d21a651e4b0ca380c5f8c6cd4a48734d63f
-            [File]   600083e002932afd1ce9706bc9ce0b99797444
-        [Folder] 2d
-            [File]   9ecb3d8dc62f43186849b710e81cc7ae6841d5
-        [Folder] 2e
-            [File]   f817b067d3b0edca51163007e0b118d294d4d2
-        [Folder] 30
-            [File]   a3096431a3e2115f2436b0e4d61c2bbd0bf344
-        [Folder] 32
-            [File]   7daef41aebab4a68479799836e6cbd322cb49c
-        [Folder] 34
-            [File]   aea5c0b02ad84c28e2384f2e3812cc68d793e4
-        [Folder] 35
-            [File]   68d5b322182b5d7274e6acb18bd9a5849165eb
-            [File]   fb6bccfbf9681aeceb98e1de5378039fce57cb
-        [Folder] 3d
-            [File]   4f1b94ee6e0bd12613ee556b5221523cf24148
-        [Folder] 43
-            [File]   ac5fbdc216a5ae368f8e57b5c6a79049fd5b60
-        [Folder] 45
-            [File]   fc21f1111df6e28f3aaa4780e805cc5c8439f9
-        [Folder] 4a
-            [File]   3ca86fd0d2973b9cb01063aaaa926eafbda6ca
-        [Folder] 4e
-            [File]   aae310c1fe6b7106f3683fb1c0ac4d3270e972
-        [Folder] 52
-            [File]   c91403c9a5d922e03b93f5cbfee316b52b43f6
-        [Folder] 55
-            [File]   ae1d2a40901af65b9f4e388c2d8704ab465f96
-        [Folder] 56
-            [File]   2d73420bfefc8e9dc57a1f13649c656b262ff2
-            [File]   fe572a0344afd9b051a4000f301c9c589ac4c3
-        [Folder] 60
-            [File]   72dc883ca4fad39b6c5ae4a3e5e045e4eb1a5c
-        [Folder] 62
-            [File]   686b57e9feccc03a58c4710a6b139facbe5e52
-        [Folder] 6a
-            [File]   8cc0174ec5e736bc21392c990daeae7f8121da
-        [Folder] 70
-            [File]   8bf7e2c471596095d9f93dbeaf0b2339182a02
-        [Folder] 76
-            [File]   39e0c4ce51a004f10890755330466f246575a8
-        [Folder] 78
-            [File]   456d871e41d5377e14819da576a28cd07f5655
-        [Folder] 8b
-            [File]   dfe5126f3d4daf6e5c9c9d46eca0636f2fe4fb
-        [Folder] 91
-            [File]   eee72b8d413fc06707123148903e3db1bc11bf
-        [Folder] 98
-            [File]   d714cec9f8a9f1113f4ae4f40628f2c9b05d4f
-        [Folder] 9c
-            [File]   f0580388c59b33edc7aa9b779aa2d068f49b28
-        [Folder] a0
-            [File]   f617c4f629e73f6869d662f9b3290c14797625
-        [Folder] a7
-            [File]   d24acceddebbb229c24175fccb90fee08c2b7e
-        [Folder] aa
-            [File]   7d09b766396f8fcc924659f22a7a7ffcb7dd53
-        [Folder] ab
-            [File]   c0c709f35ed38dec48ff729058a43cc9d57d11
-        [Folder] af
-            [File]   1026f76b301d800fc2d74e9db5c08124a40d95
-            [File]   5ba425c5e477b0501b4ad74cab67b55444f276
-        [Folder] b0
-            [File]   ce7a3e74a138f700766333db70f590fdaccfa4
-        [Folder] b2
-            [File]   fcd7ae5bced54945b27e20224b42567d3e0994
-        [Folder] c6
-            [File]   c1348708aa48811bf8ed2af515dedf0284e7a1
-        [Folder] cc
-            [File]   9285689dd580f776f8d95106017de7f867d1ff
-        [Folder] cd
-            [File]   1c23d895c08712c7f46a7e8bf1d9af37fea5c1
-        [Folder] d1
-            [File]   b86b4eb6b61b0bb1494b2764c10bca49d47c9a
-        [Folder] db
-            [File]   fd1e7a3e90c2f50d03e5bb2cbd025ea7d88b31
-        [Folder] de
-            [File]   b3709ec200863ccd6a85b96d1f9c4f6a4f1b2b
-        [Folder] e3
-            [File]   835718032caebbcc6bb771554bde61ef284d14
-        [Folder] e6
-            [File]   9de29bb2d1d6434b8b29ae775ad8c2e48c5391
-        [Folder] ef
-            [File]   35a16a9f8978208921897e13aa72e26b81299d
-        [Folder] f0
-            [File]   0e2650c71133de509c37c10b98a06888372196
-        [Folder] f2
-            [File]   ca079ff0fd57fc55c4e6afc926ce35d9057188
-        [Folder] f5
-            [File]   6819e6277be8d460c61320c80705dd8d476cc6
-        [Folder] fc
-            [File]   a69a8c3f5a62b01b31d025747167ebabbe24c0
-            [File]   abd790af71e231c7ab72b136c8e4075613ac05
-        [Folder] fe
-            [File]   1160bffe186ea4d458b120305aa8b4ce3a4975
-        [Folder] ff
-            [File]   8359ddb24f04e3b396c77d7cf5a79af65ebbe9
-            [File]   9b0422247321f438dfc9b1fb8b2aeeed24cc1b
-        [Folder] info
-        [Folder] pack
-            [File]   pack-12e68e939afceea5f5b56ae8022fc11f4d419799.idx
-            [File]   pack-12e68e939afceea5f5b56ae8022fc11f4d419799.pack
-            [File]   pack-12e68e939afceea5f5b56ae8022fc11f4d419799.rev
-    [File]   packed-refs
-    [Folder] refs
-        [Folder] heads
-            [File]   main
-        [Folder] remotes
-            [Folder] origin
-                [File]   HEAD
-                [File]   main
-        [Folder] tags
-[File]   .gitignore
-[Folder] .pytest_cache
-    [File]   .gitignore
-    [File]   CACHEDIR.TAG
-    [File]   README.md
-    [Folder] v
-        [Folder] cache
-            [File]   lastfailed
-            [File]   nodeids
-            [File]   stepwise
-[Folder] assignment1
-    [File]   regex_helper.py
-    [File]   utility_helpers.py
-    [Folder] __pycache__
-        [File]   regex_helper.cpython-312.pyc
-        [File]   utility_helpers.cpython-312.pyc
-[File]   censoror.py
-[File]   COLLABORATORS.md
-[Folder] files
-    [File]   1.txt.censored
-    [File]   2.txt.censored
-    [File]   3.txt.censored
-    [File]   4.txt.censored
-    [File]   5.txt.censored
-[File]   LICENSE
-[File]   Pipfile
-[File]   Pipfile.lock
-[File]   README.md
-[File]   setup.cfg
-[File]   setup.py
-[Folder] tests
-    [File]   assignment0.log
-    [File]   test_regex.py
-    [File]   test_utilities.py
-    [Folder] __pycache__
-        [File]   test_regex.cpython-312-pytest-8.0.2.pyc
-        [File]   test_utilities.cpython-312-pytest-8.0.2.pyc
-[Folder] text_files
-    [File]   1.txt
-    [File]   2.txt
-    [File]   3.txt
-    [File]   4.txt
-    [File]   5.txt
+03/09/2024 14:14:00 - root - DEBUG - printing stats to stderr
+03/09/2024 14:14:00 - root - INFO - directory structure ['.git', '.gitignore', '.pytest_cache', 'assignment1', 'censoror.py', 'COLLABORATORS.md', 'files', 'LICENSE', 'Pipfile', 'Pipfile.lock', 'README.md', 'setup.cfg', 'setup.py', 'tests', 'text_files']
+03/09/2024 14:14:00 - root - INFO - file in output folder ['1.txt.censored', '2.txt.censored', '3.txt.censored', '4.txt.censored', '5.txt.censored']
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\endpoints.json
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\sdk-default-configuration.json
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x0000028CCCC1AAC0>
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\s3\2006-03-01\service-2.json.gz
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\s3\2006-03-01\endpoint-rule-set-1.json.gz
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\partitions.json
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x0000028CCC987600>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x0000028CCCDAF600>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x0000028CCC987380>
+03/09/2024 14:14:00 - botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_service
+03/09/2024 14:14:00 - botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_global
+03/09/2024 14:14:00 - botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_service
+03/09/2024 14:14:00 - botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_global
+03/09/2024 14:14:00 - botocore.configprovider - DEBUG - No configured endpoint found.
+03/09/2024 14:14:00 - botocore.endpoint - DEBUG - Setting s3 timeout as (60, 60)
+03/09/2024 14:14:00 - botocore.loaders - DEBUG - Loading JSON file: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\botocore\data\_retry.json
+03/09/2024 14:14:00 - botocore.client - DEBUG - Registering retry handlers for service: s3
+03/09/2024 14:14:00 - botocore.utils - DEBUG - Registering S3 region redirector handler
+03/09/2024 14:14:00 - botocore.utils - DEBUG - Registering S3Express Identity Resolver
+03/09/2024 14:14:00 - boto3.s3.transfer - DEBUG - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False.
+03/09/2024 14:14:00 - boto3.s3.transfer - DEBUG - Using default client. pid: 21948, thread: 18760
+03/09/2024 14:14:00 - s3transfer.utils - DEBUG - Acquiring 0
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000028CCCFBA600>}) about to wait for the following futures []
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000028CCCFBA600>}) done waiting for dependent futures
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000028CCCFBA600>}) with kwargs {'client': <botocore.client.S3 object at 0x0000028CCD830530>, 'config': <boto3.s3.transfer.TransferConfig object at 0x0000028CCD56A090>, 'osutil': <s3transfer.utils.OSUtils object at 0x0000028CCD5EB170>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x0000028CCCFB9C10>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000028CCCFBA600>}
+03/09/2024 14:14:00 - s3transfer.futures - DEBUG - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'deassignment', 'key': '20240309-141400.log', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x0000028CCCFB9C10> for transfer request: 0.
+03/09/2024 14:14:00 - s3transfer.utils - DEBUG - Acquiring 0
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - PutObjectTask(transfer_id=0, {'bucket': 'deassignment', 'key': '20240309-141400.log', 'extra_args': {}}) about to wait for the following futures []
+03/09/2024 14:14:00 - s3transfer.utils - DEBUG - Releasing acquire 0/None
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - PutObjectTask(transfer_id=0, {'bucket': 'deassignment', 'key': '20240309-141400.log', 'extra_args': {}}) done waiting for dependent futures
+03/09/2024 14:14:00 - s3transfer.tasks - DEBUG - Executing task PutObjectTask(transfer_id=0, {'bucket': 'deassignment', 'key': '20240309-141400.log', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x0000028CCD830530>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x0000028CCCFBAF60>, 'bucket': 'deassignment', 'key': '20240309-141400.log', 'extra_args': {}}
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x0000028CCCC454E0>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x0000028CCCC447C0>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x0000028CCCC45EE0>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x0000028CCCC44720>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000028CCCC46840>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000028CCCEF4B00>>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.inject_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x0000028CCCFBB920>>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x0000028CCCC44540>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000028CCCC46A20>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000028CCCEF4B00>>
+03/09/2024 14:14:00 - botocore.regions - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'deassignment', 'Region': 'us-east-2', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'Key': '20240309-141400.log', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+03/09/2024 14:14:00 - botocore.regions - DEBUG - Endpoint provider result: https://deassignment.s3.us-east-2.amazonaws.com
+03/09/2024 14:14:00 - botocore.regions - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+03/09/2024 14:14:00 - botocore.regions - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-2', 'signing_name': 's3', 'disableDoubleEncoding': True}
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-call.s3.PutObject: calling handler <function conditionally_calculate_checksum at 0x0000028CCC8D0180>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x0000028CCCC44AE0>
+03/09/2024 14:14:00 - botocore.handlers - DEBUG - Adding expect 100 continue header to request.
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x0000028CCCFBB920>>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x0000028CCCC1B9C0>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x0000028CCCC46020>
+03/09/2024 14:14:00 - botocore.endpoint - DEBUG - Making request for OperationModel(name=PutObject) with params: {'url_path': '/20240309-141400.log', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.34.59 md/Botocore#1.34.59 ua/2.0 os/windows#11 md/arch#amd64 lang/python#3.12.2 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.34.59', 'Content-MD5': 'yV81LkWW8jr1Yv13jonMtQ==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x0000028CCCFBAF60>, 'auth_path': '/deassignment/20240309-141400.log', 'url': 'https://deassignment.s3.us-east-2.amazonaws.com/20240309-141400.log', 'context': {'client_region': 'us-east-2', 'client_config': <botocore.config.Config object at 0x0000028CCD831190>, 'has_streaming_input': True, 'auth_type': 'v4', 's3_redirect': {'redirected': False, 'bucket': 'deassignment', 'params': {'Bucket': 'deassignment', 'Key': '20240309-141400.log', 'Body': <s3transfer.utils.ReadFileChunk object at 0x0000028CCCFBAF60>}}, 'S3Express': {'bucket_name': 'deassignment'}, 'signing': {'region': 'us-east-2', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-2'}]}}}
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x0000028CD23C4680>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000028CCD833B30>>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x0000028CCCC44400>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x0000028CCCC46980>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x0000028CCCFBB920>>
+03/09/2024 14:14:00 - botocore.auth - DEBUG - Calculating signature using v4 auth.
+03/09/2024 14:14:00 - botocore.auth - DEBUG - CanonicalRequest:
+PUT
+/20240309-141400.log
 
+content-md5:yV81LkWW8jr1Yv13jonMtQ==
+host:deassignment.s3.us-east-2.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20240309T191400Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+03/09/2024 14:14:00 - botocore.auth - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20240309T191400Z
+20240309/us-east-2/s3/aws4_request
+bbc604fbbe9e5f9765cc0805874a09f3a0d15aba0808eb3ea78b6df0adc7be73
+03/09/2024 14:14:00 - botocore.auth - DEBUG - Signature:
+5d4067febe9b8cde46a96f480a7b99b7fea04d26872ee2f6baddafb1e286cca0
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x0000028CD23C4720>
+03/09/2024 14:14:00 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x0000028CCCC467A0>
+03/09/2024 14:14:00 - botocore.endpoint - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://deassignment.s3.us-east-2.amazonaws.com/20240309-141400.log, headers={'User-Agent': b'Boto3/1.34.59 md/Botocore#1.34.59 ua/2.0 os/windows#11 md/arch#amd64 lang/python#3.12.2 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.34.59', 'Content-MD5': b'yV81LkWW8jr1Yv13jonMtQ==', 'Expect': b'100-continue', 'X-Amz-Date': b'20240309T191400Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIATNNECNCIQVLW42KP/20240309/us-east-2/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=5d4067febe9b8cde46a96f480a7b99b7fea04d26872ee2f6baddafb1e286cca0', 'amz-sdk-invocation-id': b'1c2c37e7-3d40-4280-a23d-4541826f6e0d', 'amz-sdk-request': b'attempt=1', 'Content-Length': '27086'}>
+03/09/2024 14:14:00 - botocore.httpsession - DEBUG - Certificate path: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\certifi\cacert.pem
+03/09/2024 14:14:00 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): deassignment.s3.us-east-2.amazonaws.com:443
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - Waiting for 100 Continue response.
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - Received a non 100 Continue response from the server, NOT sending request body.
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - send() called, but response already received. Not sending data.
+03/09/2024 14:14:01 - urllib3.connectionpool - DEBUG - https://deassignment.s3.us-east-2.amazonaws.com:443 "PUT /20240309-141400.log HTTP/1.1" 301 None
+03/09/2024 14:14:01 - botocore.parsers - DEBUG - Response headers: {'x-amz-bucket-region': 'us-east-1', 'x-amz-request-id': 'SDBVDE29GB652WJM', 'x-amz-id-2': 'rdIZajHJoyNV7/R7KTzZCWSnZWXctP7WcJrftDKEaL0DxRpYTplLoSV9FtUY2lzQUa7E6GYnm+QnM4+3Ig5CNw==', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 09 Mar 2024 19:14:01 GMT', 'Server': 'AmazonS3', 'Connection': 'close'}
+03/09/2024 14:14:01 - botocore.parsers - DEBUG - Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>deassignment</Bucket><RequestId>SDBVDE29GB652WJM</RequestId><HostId>rdIZajHJoyNV7/R7KTzZCWSnZWXctP7WcJrftDKEaL0DxRpYTplLoSV9FtUY2lzQUa7E6GYnm+QnM4+3Ig5CNw==</HostId></Error>'
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x0000028CCCFB9A60>
+03/09/2024 14:14:01 - botocore.retryhandler - DEBUG - No retry needed.
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000028CCCEF4B00>>
+03/09/2024 14:14:01 - botocore.utils - DEBUG - S3 client configured for region us-east-2 but the bucket deassignment is in region us-east-1; Please configure the proper region to avoid multiple unnecessary redirects and signing attempts.
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000028CCCC46A20>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000028CCCEF4B00>>
+03/09/2024 14:14:01 - botocore.regions - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'deassignment', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'Key': '20240309-141400.log', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+03/09/2024 14:14:01 - botocore.regions - DEBUG - Endpoint provider result: https://deassignment.s3.us-east-1.amazonaws.com
+03/09/2024 14:14:01 - botocore.utils - DEBUG - Updating URI from https://deassignment.s3.us-east-2.amazonaws.com/20240309-141400.log to https://deassignment.s3.us-east-1.amazonaws.com/20240309-141400.log
+03/09/2024 14:14:01 - botocore.regions - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+03/09/2024 14:14:01 - botocore.regions - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+03/09/2024 14:14:01 - botocore.endpoint - DEBUG - Response received to retry, sleeping for 0 seconds
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - Rewinding stream: <s3transfer.utils.ReadFileChunk object at 0x0000028CCCFBAF60>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x0000028CD23C4680>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000028CCD833B30>>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x0000028CCCC44400>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x0000028CCCC46980>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x0000028CCCFBB920>>
+03/09/2024 14:14:01 - botocore.auth - DEBUG - Calculating signature using v4 auth.
+03/09/2024 14:14:01 - botocore.auth - DEBUG - CanonicalRequest:
+PUT
+/20240309-141400.log
+
+content-md5:yV81LkWW8jr1Yv13jonMtQ==
+host:deassignment.s3.us-east-1.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20240309T191401Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+03/09/2024 14:14:01 - botocore.auth - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20240309T191401Z
+20240309/us-east-1/s3/aws4_request
+3d4f21be73937df91489440e5657a656371daf54371c3c2e21834f53ccf4449b
+03/09/2024 14:14:01 - botocore.auth - DEBUG - Signature:
+8cfca11a5f393869a2baf5c66bafaf4c8c9aa6b9757a4a99a529458a291ae7f0
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x0000028CD23C4720>
+03/09/2024 14:14:01 - botocore.hooks - DEBUG - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x0000028CCCC467A0>
+03/09/2024 14:14:01 - botocore.endpoint - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://deassignment.s3.us-east-1.amazonaws.com/20240309-141400.log, headers={'User-Agent': b'Boto3/1.34.59 md/Botocore#1.34.59 ua/2.0 os/windows#11 md/arch#amd64 lang/python#3.12.2 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.34.59', 'Content-MD5': b'yV81LkWW8jr1Yv13jonMtQ==', 'Expect': b'100-continue', 'X-Amz-Date': b'20240309T191401Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIATNNECNCIQVLW42KP/20240309/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=8cfca11a5f393869a2baf5c66bafaf4c8c9aa6b9757a4a99a529458a291ae7f0', 'amz-sdk-invocation-id': b'1c2c37e7-3d40-4280-a23d-4541826f6e0d', 'amz-sdk-request': b'ttl=20240309T191501Z; attempt=2; max=5', 'Content-Length': '27086'}>
+03/09/2024 14:14:01 - botocore.httpsession - DEBUG - Certificate path: C:\Users\ghari\.virtualenvs\cis6930sp24-assignment1-uWBnGQ1j\Lib\site-packages\certifi\cacert.pem
+03/09/2024 14:14:01 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): deassignment.s3.us-east-1.amazonaws.com:443
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - Waiting for 100 Continue response.
+03/09/2024 14:14:01 - botocore.awsrequest - DEBUG - 100 Continue response seen, now sending request body.
+03/09/2024 14:14:01 - urllib3.connectionpool - DEBUG - https://deassignment.s3.us-east-1.amazonaws.com:443 "PUT /20240309-141400.log HTTP/1.1" 200 0
+03/09/2024 14:14:02 - botocore.parsers - DEBUG - Response headers: {'x-amz-id-2': 'UluIR8YbSSNw0R6hq3EGBxPA16ek71y+ux7Zb3pHAVJZ9DjamwvBOmBKZiT4XMuR1EKoyI1dhUA=', 'x-amz-request-id': 'SDBQ3STNNA51EAAB', 'Date': 'Sat, 09 Mar 2024 19:14:02 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"c95f352e4596f23af562fd778e89ccb5"', 'Server': 'AmazonS3', 'Content-Length': '0'}
+03/09/2024 14:14:02 - botocore.parsers - DEBUG - Response body:
+b''
+03/09/2024 14:14:02 - botocore.hooks - DEBUG - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x0000028CCCFB9A60>
+03/09/2024 14:14:02 - botocore.retryhandler - DEBUG - No retry needed.
+03/09/2024 14:14:02 - botocore.hooks - DEBUG - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000028CCCEF4B00>>
+03/09/2024 14:14:02 - botocore.utils - DEBUG - S3 request was previously redirected, not redirecting.
+03/09/2024 14:14:02 - s3transfer.utils - DEBUG - Releasing acquire 0/None
