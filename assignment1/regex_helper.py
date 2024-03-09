@@ -24,8 +24,8 @@ def regex_match(text):
 
     match_dict = {"PERSON": [], "DATE": [], "PHONE": [], "ADDRESS": []}
 
-    logger.debug("regex matching started")
-    logger.debug(
+    logger.info("regex matching started")
+    logger.info(
         "regex matching initial dictionary {}".format(type(match_dict["PERSON"]))
     )
     # mail match

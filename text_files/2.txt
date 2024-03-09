@@ -2,7 +2,7 @@ Message-ID: <5468446.1075855378133.JavaMail.evans@thyme>
 Date: Mon, 14 May 2001 13:39:00 -0700 (PDT)
 From: phillip.allen@enron.com
 To: outlook.team@enron.com
-Subject: Re: 2- SURVEY/INFORMATION EMAIL 5-14- 01
+Subject: Re: 2- SURVEY/infoRMATION EMAIL 5-14- 01
 Mime-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: quoted-printable
@@ -64,7 +64,7 @@ Kinsey/HOU/ECT@ECT, Margie Straight/HOU/ECT@ECT, Mark L Schrab/HOU/ECT@ECT,=
 Omber/NA/Enron@ENRON, Wes Dempsey/NA/Enron@Enron, Barry Feldman/NYC/MGUSA@M=
 GUSA, Catherine Huynh/NA/Enron@Enron
 cc:=09=20
-Subject:=092- SURVEY/INFORMATION EMAIL 5-14- 01
+Subject:=092- SURVEY/infoRMATION EMAIL 5-14- 01
 
 Current Notes User:=20
 

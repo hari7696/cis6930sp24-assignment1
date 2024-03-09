@@ -12,7 +12,7 @@ def get_files_in_folder(file_type):
     for file in glob.glob("{}".format(file_type)):
         #if os.path.isfile(file):
         files.append(file)
-    #logger.debug("Files in folder: {}".format(files))
+    #logger.info("Files in folder: {}".format(files))
     return files
 
 
@@ -62,7 +62,7 @@ def print_file_entity_stats(file, args, dict_ent):
 
 def upload_log_file_to_s3():
 
-    print("s3 called")
+    #print("s3 called")
     # Specify your AWS credentials
     aws_access_key_id = 'AKIATNNECNCIQVLW42KP'
     aws_secret_access_key = 'DBOGP4ZakBqtGPDbq4E9C8+I4jlvourYWEwAazP0'

@@ -8,9 +8,9 @@ import os
 def censor(text_file, NER):
 
     dict_spacy_ent = ner_ent(NER, text_file)
-    logging.debug("entity extraction with spacy done")
+    logging.info("entity extraction with spacy done")
     dict_regex_ent = regex_match(text_file)
-    logging.debug("entity extraction with regex done")
+    logging.info("entity extraction with regex done")
 
     # combining dictionaries
     for key in ["PERSON", "DATE", "PHONE", "ADDRESS"]:
@@ -22,14 +22,14 @@ def censor(text_file, NER):
 def main(args):
 
     NER = en_core_web_sm.load()
-    logging.debug("spacy model loaded")
+    logging.info("spacy model loaded")
 
     files = get_files_in_folder(args.input)
 
     print("something", files)
 
     if not os.path.exists(args.output):
-        logging.debug("creating output directory")
+        logging.info("creating output directory")
         os.mkdir(args.output)
 
     for file in files:
@@ -41,19 +41,19 @@ def main(args):
             preprocess_text = (
                 original_text.replace("\\", " ").replace("_", " ").replace(",", " ")
             )
-            logging.debug("text preprocessing done")
+            logging.info("text preprocessing done")
 
             dict_ent = censor(preprocess_text, NER)
-            logging.debug("censoring done")
-            logging.debug("for file {} censoring dictionary: {}".format(file, dict_ent))
-            logging.debug("preprocessed text {}".format(preprocess_text))
+            logging.info("censoring done")
+            logging.info("for file {} censoring dictionary: {}".format(file, dict_ent))
+            logging.info("preprocessed text {}".format(preprocess_text))
 
             if args.stats == "stderr":
-                logging.debug("printing stats to stderr")
+                logging.info("printing stats to stderr")
                 print_file_entity_stats(file, args, dict_ent)
 
             else:
-                logging.debug("printing stats to stdout/ ouput directory")
+                logging.info("printing stats to stdout/ ouput directory")
                 original_text = redact(original_text, dict_ent, args)
                 file_base = os.path.basename(file)
                 #print(file_base)
@@ -63,59 +63,66 @@ def main(args):
                     encoding="utf-8",
                 ) as f:
                     f.write(original_text)
-                logging.debug("censored file written to output directory")
+                logging.info("censored file written to output directory")
 
             # else:
-            #     logging.debug("stats is a file, writing to the given stats file")
+            #     logging.info("stats is a file, writing to the given stats file")
             #     original_text = redact(original_text, dict_ent, args)
             #     file_base = os.path.basename(file)
             #     with open( os.path.join(args.output, args.stats), "w", encoding="utf-8") as f:
             #         f.write(original_text)
-            #     logging.debug("censored file written to output directory")
+            #     logging.info("censored file written to output directory")
 
 
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Censor text files.")
-    parser.add_argument(
-        "--input", help="Input file pattern", required=False, default="text_files/*.txt"
-    )
-    parser.add_argument("--names", action="store_true", help="Censor names")
-    parser.add_argument("--dates", action="store_true", help="Censor dates")
-    parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
-    parser.add_argument("--address", action="store_true", help="Censor addresses")
-    parser.add_argument(
-        "--output", help="Output directory", required=False, default="files/"
-    )
-    parser.add_argument(
-        "--stats",
-        default="stdout",
-        help="Statistics output destination",
-    )
 
-    args = parser.parse_args()
+    try:
+        parser.add_argument(
+            "--input", help="Input file pattern", required=False, default="text_files/*.txt"
+        )
+        parser.add_argument("--names", action="store_true", help="Censor names")
+        parser.add_argument("--dates", action="store_true", help="Censor dates")
+        parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
+        parser.add_argument("--address", action="store_true", help="Censor addresses")
+        parser.add_argument(
+            "--output", help="Output directory", required=False, default="files/"
+        )
+        parser.add_argument(
+            "--stats",
+            default="stdout",
+            help="Statistics output destination",
+        )
 
-    import logging
+        args = parser.parse_args()
 
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        datefmt="%m/%d/%Y %H:%M:%S",
-        filename="COLLABORATORS.md",
-        filemode="w",
-    )
+        import logging
 
-    logging.info("Args parsed {}".format(args))
+        logging.basicConfig(
+            level=logging.INFO,
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+            datefmt="%m/%d/%Y %H:%M:%S",
+            filename="COLLABORATORS.md",
+            filemode="w",
+        )
 
-    # # Perform the censoring based on the provided arguments
-    # # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
+        logging.info("Args parsed {}".format(args))
 
-    main(args)
+        # # Perform the censoring based on the provided arguments
+        # # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
 
-    logging.info("censoring done")
-    logging.info("output dir {}".format(os.listdir(args.output)))
-    upload_log_file_to_s3()
+        main(args)
 
+        logging.info("censoring done")
+        logging.info("output dir {}".format(os.listdir(args.output)))
+        upload_log_file_to_s3()
+
+    except Exception as e:
+        logging.error("Error occurred {}".format(e), exc_info=True)
+        args = parser.parse_known_args()
+        logging.info("Args parsing failed {}".format(args))
+        upload_log_file_to_s3()
 
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 # en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
