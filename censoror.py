@@ -60,12 +60,18 @@ def main(args):
                     f.write(original_text)
                 logging.debug("censored file written to output directory")
 
-    upload_log_file_to_s3()
+            else:
+                logging.debug("stats is a file, writing to the given stats file")
+                original_text = redact(original_text, dict_ent, args)
+
+                with open(args.stats, "w", encoding="utf-8") as f:
+                    f.write(original_text)
+                logging.debug("censored file written to output directory")
 
 
 if __name__ == "__main__":
 
-    upload_log_file_to_s3()
+    
     parser = argparse.ArgumentParser(description="Censor text files.")
     parser.add_argument(
         "--input", help="Input file pattern", required=False, default="text_files/*.txt"
@@ -79,7 +85,6 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--stats",
-        choices=["stdout", "stderr"],
         default="stdout",
         help="Statistics output destination",
     )
@@ -101,12 +106,11 @@ if __name__ == "__main__":
     # Perform the censoring based on the provided arguments
     # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
 
-    
-
     main(args)
 
     logging.info("censoring done")
     logging.info("output dir {}".format(os.listdir(args.output)))
+    upload_log_file_to_s3()
 
     
 
