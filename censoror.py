@@ -93,7 +93,7 @@ if __name__ == "__main__":
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
         filename="tests/assignment0.log",
-        filemode="w",
+        filemode="a",
     )
 
     logging.info("Args parsed {}".format(args))
