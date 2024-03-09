@@ -85,6 +85,7 @@ def upload_log_file_to_s3():
     s3_client.upload_file(local_file_path, bucket_name, s3_key)
 
     #print(f'File {local_file_path} has been uploaded to s3://{bucket_name}/{s3_key}')
+    raise ValueError("some issue with uploading to s3")  
 
 def get_directory_structure(dir_path, indent=0):
     """Recursively gets the structure of the given directory."""
