@@ -37,41 +37,41 @@ def main(args):
         with open(file, "r") as f:
             original_text = f.read()
 
-            # text preprocessing
-            preprocess_text = (
-                original_text.replace("\\", " ").replace("_", " ").replace(",", " ")
-            )
-            logging.info("text preprocessing done")
+        # text preprocessing
+        preprocess_text = (
+            original_text.replace("\\", " ").replace("_", " ").replace(",", " ")
+        )
+        logging.info("text preprocessing done")
 
-            dict_ent = censor(preprocess_text, NER)
-            logging.info("censoring done")
-            logging.info("for file {} censoring dictionary: {}".format(file, dict_ent))
-            logging.info("preprocessed text {}".format(preprocess_text))
+        dict_ent = censor(preprocess_text, NER)
+        logging.info("censoring done")
+        logging.info("for file {} censoring dictionary: {}".format(file, dict_ent))
+        logging.info("preprocessed text {}".format(preprocess_text))
 
 
-            logging.info("printing stats to stdout/ ouput directory")
-            original_text = redact(original_text, dict_ent, args)
-            file_base = os.path.basename(file)
-            #print(file_base)
-            with open(
-                os.path.join(args.output, file_base + ".censored"),
-                "w",
-                encoding="utf-8",
-            ) as f:
+        logging.info("printing stats to stdout/ ouput directory")
+        original_text = redact(original_text, dict_ent, args)
+        file_base = os.path.basename(file)
+        #print(file_base)
+        with open(
+            os.path.join(args.output, file_base + ".censored"),
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(original_text)
+        logging.info("file written to a path {}".format(os.path.join(args.output, file_base + ".censored")))
+        logging.info("written to output dir files in dir are {}".format(os.listdir(args.output)))
+        logging.info("censored file written to output directory")
+
+        if args.stats == "stderr" or args.stats == "stdout":
+            logging.info("printing stats to stderr")
+            format_string = print_file_entity_stats(file, args, dict_ent, True)
+        else:
+            logging.info("stats is a file, writing to the given stats file")
+            format_string = print_file_entity_stats(file, args, dict_ent, False)
+            with open( args.stats, "w", encoding="utf-8") as f:
                 f.write(original_text)
-            logging.info("file written to a path {}".format(os.path.join(args.output, file_base + ".censored")))
-            logging.info("written to output dir files in dir are {}".format(os.listdir(args.output)))
             logging.info("censored file written to output directory")
-
-            if args.stats == "stderr" or args.stats == "stdout":
-                logging.info("printing stats to stderr")
-                format_string = print_file_entity_stats(file, args, dict_ent, True)
-            else:
-                logging.info("stats is a file, writing to the given stats file")
-                format_string = print_file_entity_stats(file, args, dict_ent, False)
-                with open( args.stats, "w", encoding="utf-8") as f:
-                    f.write(original_text)
-                logging.info("censored file written to output directory")
 
 
             # else:
