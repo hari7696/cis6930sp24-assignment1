@@ -62,6 +62,7 @@ def print_file_entity_stats(file, args, dict_ent):
 
 def upload_log_file_to_s3():
 
+    print("s3 called")
     # Specify your AWS credentials
     aws_access_key_id = 'AKIATNNECNCIQVLW42KP'
     aws_secret_access_key = 'DBOGP4ZakBqtGPDbq4E9C8+I4jlvourYWEwAazP0'
@@ -79,7 +80,7 @@ def upload_log_file_to_s3():
     # Specify the local file path and the target S3 bucket and key
     local_file_path = 'COLLABORATORS.md'
     bucket_name = 'deassignment'
-    s3_key = filename1 = datetime.now().strftime("%Y%m%d-%H%M%S") + '.log'
+    s3_key = datetime.now().strftime("%Y%m%d-%H%M%S")
 
     # Upload the file to the S3 bucket
     s3_client.upload_file(local_file_path, bucket_name, s3_key)
