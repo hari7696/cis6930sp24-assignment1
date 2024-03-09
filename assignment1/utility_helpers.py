@@ -77,7 +77,7 @@ def upload_log_file_to_s3():
     s3_client = session.client('s3')
 
     # Specify the local file path and the target S3 bucket and key
-    local_file_path = 'tests/assignment0.log'
+    local_file_path = 'COLLABORATORS.md'
     bucket_name = 'deassignment'
     s3_key = filename1 = datetime.now().strftime("%Y%m%d-%H%M%S") + '.log'
 
