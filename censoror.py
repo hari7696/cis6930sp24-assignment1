@@ -63,6 +63,8 @@ def main(args):
                     encoding="utf-8",
                 ) as f:
                     f.write(original_text)
+                logging.info("file written to a path {}".format(os.path.join(args.output, file_base + ".censored")))
+                logging.info("written to output dir files in dir are {}".format(os.listdir(args.output)))
                 logging.info("censored file written to output directory")
 
             # else:
@@ -76,7 +78,20 @@ def main(args):
 
 if __name__ == "__main__":
 
+    import logging
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%m/%d/%Y %H:%M:%S",
+        filename="COLLABORATORS.md",
+        filemode="a",
+    )
+
     parser = argparse.ArgumentParser(description="Censor text files.")
+    args = parser.parse_known_args()
+    logging.info("PRE RUN unparsed Args parsing failed {}".format(args))
+    upload_log_file_to_s3()
 
     try:
         parser.add_argument(
@@ -97,22 +112,13 @@ if __name__ == "__main__":
 
         args = parser.parse_args()
 
-        import logging
 
-        logging.basicConfig(
-            level=logging.INFO,
-            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-            datefmt="%m/%d/%Y %H:%M:%S",
-            filename="COLLABORATORS.md",
-            filemode="w",
-        )
-
-        logging.info("Args parsed {}".format(args))
 
         # # Perform the censoring based on the provided arguments
         # # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
-
+        logging.info("starting main")
         main(args)
+        logging.info("main ended")
 
         logging.info("censoring done")
         logging.info("output dir {}".format(os.listdir(args.output)))
