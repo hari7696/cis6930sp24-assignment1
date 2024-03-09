@@ -22,4 +22,5 @@ rad.json
 .pytest_cache
 __pycache__
 #text_files
-.txt
+# *.txt
+# *.censored
