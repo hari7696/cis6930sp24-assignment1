@@ -6,10 +6,11 @@ name = "pypi"
 [packages]
 spacy = "*"
 snorkel = "==0.9.9"
-en_core_web_sm = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl"}
 pytest = "*"
+boto3 = "*"
+en_core_web_sm = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl"}
 
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3.12"
