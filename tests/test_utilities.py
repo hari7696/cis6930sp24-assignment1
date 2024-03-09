@@ -29,5 +29,5 @@ def test_print_file_entity_stats():
     parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
     parser.add_argument("--address", action="store_true", help="Censor addresses")
     args = parser.parse_args()
-    print_file_entity_stats('test.txt', args, dict_ent)
+    print_file_entity_stats('test.txt', args, dict_ent, False)
     assert True
