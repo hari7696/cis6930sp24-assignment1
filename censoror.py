@@ -60,6 +60,8 @@ def main(args):
                     f.write(original_text)
                 logging.debug("censored file written to output directory")
 
+    upload_log_file_to_s3()
+
 
 if __name__ == "__main__":
 
@@ -105,7 +107,7 @@ if __name__ == "__main__":
     logging.info("censoring done")
     logging.info("output dir {}".format(os.listdir(args.output)))
 
-    upload_log_file_to_s3()
+    
 
 
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
