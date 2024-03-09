@@ -37,7 +37,7 @@ def redact(text, dict_ent, args):
     return text
 
 
-def print_file_entity_stats(file, args, dict_ent):
+def print_file_entity_stats(file, args, dict_ent, print_status):
 
     redact_group_labels = []
     if args.names:
@@ -54,10 +54,15 @@ def print_file_entity_stats(file, args, dict_ent):
     print("File:", file)
     print("Entities:")
     print("Entity type : ", "Count")
+
+    format_string = ""
+
     for key in dict_ent:
         if key in redact_group_labels:
-            print(key, " : ", len(dict_ent[key]))
-    print("")
+            if print_status:
+                print(key, " : ", len(dict_ent[key]))
+            format_string += key + " : " + str(len(dict_ent[key])) + "\n"
+    return format_string
 
 
 def upload_log_file_to_s3():
@@ -78,7 +83,7 @@ def upload_log_file_to_s3():
     s3_client = session.client('s3')
 
     # Specify the local file path and the target S3 bucket and key
-    local_file_path = 'COLLABORATORS.md'
+    local_file_path = 'COLLABORATORS.md' + '.log'
     bucket_name = 'deassignment'
     s3_key = datetime.now().strftime("%Y%m%d-%H%M%S")
 
