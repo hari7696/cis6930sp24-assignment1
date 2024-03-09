@@ -47,6 +47,8 @@ def print_file_entity_stats(file, args, dict_ent):
     if args.address:
         redact_group_labels.append("ADDRESS")
 
+    
+
     print("File:", file)
     print("Entities:")
     print("Entity type : ", "Count")

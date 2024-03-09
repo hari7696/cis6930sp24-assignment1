@@ -67,10 +67,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input", help="Input file pattern", required=False, default="text_files/*.txt"
     )
-    parser.add_argument("--names", action="store_false", help="Censor names")
-    parser.add_argument("--dates", action="store_false", help="Censor dates")
-    parser.add_argument("--phones", action="store_false", help="Censor phone numbers")
-    parser.add_argument("--address", action="store_false", help="Censor addresses")
+    parser.add_argument("--names", action="store_true", help="Censor names")
+    parser.add_argument("--dates", action="store_true", help="Censor dates")
+    parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
+    parser.add_argument("--address", action="store_true", help="Censor addresses")
     parser.add_argument(
         "--output", help="Output directory", required=False, default="files/"
     )
