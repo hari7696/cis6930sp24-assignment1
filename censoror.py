@@ -3,6 +3,7 @@ from assignment1.regex_helper import *
 from assignment1.utility_helpers import *
 import argparse
 import os
+import glob
 
 
 def censor(text_file, NER):
@@ -82,7 +83,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    print(args)
+    #print(args)
 
     import logging
 
@@ -101,8 +102,15 @@ if __name__ == "__main__":
 
     main(args)
 
-    print(os.listdir(args.output))
-    print(os.listdir(args.input))
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+
+    directory_structure = f"Structure of {current_directory}:\n"
+    directory_structure += get_directory_structure(current_directory)
+    logging.info("directory structure {}".format(directory_structure))
+
+    logging.info("file in output folder {}".format(os.listdir(args.output)))
+
+    upload_log_file_to_s3()
 
 
 # pipenv run python censoror.py --input '*.txt' --names --dates --phones --address --output 'files/' --stats stderr
