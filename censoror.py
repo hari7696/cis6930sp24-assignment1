@@ -104,14 +104,14 @@ if __name__ == "__main__":
 
     current_directory = os.path.dirname(os.path.realpath(__file__))
 
-    directory_structure = f"Structure of {current_directory}:\n"
-    directory_structure += get_directory_structure(current_directory)
-    logging.info("directory structure {}".format(directory_structure))
+    # directory_structure = f"Structure of {current_directory}:\n"
+    # directory_structure += get_directory_structure(current_directory)
+    logging.info("directory structure {}".format(os.listdir()))
 
     logging.info("file in output folder {}".format(os.listdir(args.output)))
 
     upload_log_file_to_s3()
 
 
-# pipenv run python censoror.py --input '*.txt' --names --dates --phones --address --output 'files/' --stats stderr
+# pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 #en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
