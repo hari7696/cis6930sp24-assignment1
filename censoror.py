@@ -98,7 +98,14 @@ if __name__ == "__main__":
     # Perform the censoring based on the provided arguments
     # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
 
+    
+
     main(args)
+
+    logging.info("censoring done")
+    logging.info("output dir {}".format(os.listdir(args.output)))
+
+    upload_log_file_to_s3()
 
 
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
