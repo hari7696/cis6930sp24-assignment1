@@ -73,23 +73,24 @@ if __name__ == "__main__":
 
     
     parser = argparse.ArgumentParser(description="Censor text files.")
-    parser.add_argument(
-        "--input", help="Input file pattern", required=False, default="text_files/*.txt"
-    )
-    parser.add_argument("--names", action="store_true", help="Censor names")
-    parser.add_argument("--dates", action="store_true", help="Censor dates")
-    parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
-    parser.add_argument("--address", action="store_true", help="Censor addresses")
-    parser.add_argument(
-        "--output", help="Output directory", required=False, default="files/"
-    )
-    parser.add_argument(
-        "--stats",
-        default="stdout",
-        help="Statistics output destination",
-    )
+    # parser.add_argument(
+    #     "--input", help="Input file pattern", required=False, default="text_files/*.txt"
+    # )
+    # parser.add_argument("--names", action="store_true", help="Censor names")
+    # parser.add_argument("--dates", action="store_true", help="Censor dates")
+    # parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
+    # parser.add_argument("--address", action="store_true", help="Censor addresses")
+    # parser.add_argument(
+    #     "--output", help="Output directory", required=False, default="files/"
+    # )
+    # parser.add_argument(
+    #     "--stats",
+    #     default="stdout",
+    #     help="Statistics output destination",
+    # )
 
     args = parser.parse_args()
+
 
     import logging
 
@@ -97,19 +98,19 @@ if __name__ == "__main__":
         level=logging.DEBUG,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
-        filename="tests/assignment0.log",
+        filename="COLLABORATORS.md",
         filemode="a",
     )
 
     logging.info("Args parsed {}".format(args))
 
-    # Perform the censoring based on the provided arguments
-    # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
+    # # Perform the censoring based on the provided arguments
+    # # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
 
-    main(args)
+    # #main(args)
 
-    logging.info("censoring done")
-    logging.info("output dir {}".format(os.listdir(args.output)))
+    # logging.info("censoring done")
+    # logging.info("output dir {}".format(os.listdir(args.output)))
     upload_log_file_to_s3()
 
     
