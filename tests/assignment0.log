@@ -1,1 +1,256 @@
-03/08/2024 17:30:38 - root - INFO - Args parsed Namespace(input='*.txt', names=True, dates=True, phones=True, address=True, output='files/', stats='stdout')
+03/08/2024 23:54:15 - root - INFO - Args parsed Namespace(input='text_files/*.txt', names=True, dates=True, phones=True, address=True, output='files/', stats='stdout')
+03/08/2024 23:54:17 - root - DEBUG - spacy model loaded
+03/08/2024 23:54:17 - assignment1.utility_helpers - DEBUG - Files in folder: ['1.txt', '2.txt', '3.txt', '4.txt', '5.txt']
+03/08/2024 23:54:17 - root - DEBUG - text preprocessing done
+03/08/2024 23:54:17 - root - DEBUG - entity extraction with spacy done
+03/08/2024 23:54:17 - assignment1.regex_helper - DEBUG - regex matching started
+03/08/2024 23:54:17 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/08/2024 23:54:17 - root - DEBUG - entity extraction with regex done
+03/08/2024 23:54:17 - root - DEBUG - censoring done
+03/08/2024 23:54:17 - root - DEBUG - for file 1.txt censoring dictionary: {'PERSON': [(268, 283, 'Phillip K Allen'), (290, 300, 'Tim Belden'), (302, 312, 'Tim Belden'), (357, 370, 'Phillip Allen'), (381, 400, "Allen  Phillip K. '"), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 146, 'tim.belden'), (306, 318, 'Belden/Enron')], 'DATE': [(64, 80, 'Mon  14 May 2001'), (81, 89, '16:39:00'), (69, 75, '14 May'), (181, 184, '1.0'), (371, 378, 'Jan2002')], 'PHONE': [(13, 35, '18782981.1075855378110'), (75, 83, ' 2001 16'), (87, 95, '00 -0700')], 'ADDRESS': []}
+03/08/2024 23:54:17 - root - DEBUG - preprocessed text Message-ID: <18782981.1075855378110.JavaMail.evans@thyme>
+Date: Mon  14 May 2001 16:39:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: tim.belden@enron.com
+Subject: 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Phillip K Allen
+X-To: Tim Belden <Tim Belden/Enron@EnronXGate>
+X-cc: 
+X-bcc: 
+X-Folder:  Phillip Allen Jan2002 1 Allen  Phillip K. 'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+Here is our forecast
+
+ 
+03/08/2024 23:54:17 - root - DEBUG - printing stats to stdout/ ouput directory
+03/08/2024 23:54:17 - root - DEBUG - censored file written to output directory
+03/08/2024 23:54:17 - root - DEBUG - text preprocessing done
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with spacy done
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching started
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with regex done
+03/08/2024 23:54:20 - root - DEBUG - censoring done
+03/08/2024 23:54:20 - root - DEBUG - for file 2.txt censoring dictionary: {'PERSON': [(321, 336, 'Phillip K Allen'), (434, 447, 'Phillip Allen'), (458, 477, "Allen  Phillip K. '"), (645, 657, 'Cindy R Ward'), (679, 687, 'Ann Hill'), (706, 720, 'Sonja Galloway'), (739, 750, 'Bilal Bajwa'), (769, 778, 'Binh Pham'), (792, 805, 'Bradley Jones'), (856, 868, 'Chance Rabon'), (887, 897, 'Chuck Ames'), (916, 930, 'David Baumbach'), (944, 952, 'Jad Doan'), (971, 984, "O'Neal D Win="), (1003, 1017, 'Phillip M Love'), (1031, 1049, 'Sladana-Anna Kulic'), (1070, 1087, 'Victor Guggenheim'), (1101, 1117, 'Alejandra Chavez'), (1164, 1176, 'Carole Frank'), (1193, 1207, 'Darron C Giron'), (1223, 1244, 'Elizabeth L Hernandez'), (1258, 1272, 'Elizabeth Shim'), (1293, 1303, 'Jeff Royed'), (1322, 1332, 'Kam Keiser'), (1346, 1358, 'Kimat Singla'), (1374, 1388, 'Kristen Clause'), (1440, 1448, 'Kyle =\nR'), (1468, 1482, 'Luchas Johnson'), (1499, 1510, 'Maria Garza'), (1526, 1539, 'Patrick Ryder'), (1556, 1569, "Ryan O'Rourke"), (1588, 1597, 'Yuan Tian'), (1616, 1627, 'Frank Ermis'), (1641, 1653, 'Jane M Tholt'), (1667, 1677, 'Jay Reitm='), (1696, 1707, 'Keith Holst'), (1721, 1736, 'Matthew Lenhart'), (1778, 1793, 'Monique Sanchez'), (1807, 1822, 'Phillip K Allen'), (1838, 1851, 'Randall L Gay'), (1865, 1880, 'Tori Kuykendall'), (1894, 1904, 'Ina Norman'), (1920, 1933, 'Jackie Travis'), (1947, 1963, 'Michael J Gasper'), (1977, 1987, 'Brenda =\nH'), (2010, 2024, 'Jeanne Wukasch'), (2043, 2062, 'Mary Theresa Frank='), (2080, 2091, 'Mike Potter'), (2108, 2121, 'Natalie Baker'), (2140, 2153, 'anne Calcagno'), (2170, 2187, 'Albert Stromquist'), (2206, 2216, 'Rajesh Ch='), (2261, 2275, 'Derek Anderson'), (2314, 2328, 'Camille Gerard'), (2347, 2357, 'Cathy Lira'), (2376, 2393, 'Daniel Castagnola'), (2431, 2438, 'Eva Tow'), (2486, 2495, 'Andy Pace'), (2512, 2524, 'Anna Santuc='), (2544, 2558, 'Claudia Guerra'), (2575, 2589, 'Clayton Vernon'), (2610, 2620, 'David Ryan'), (2639, 2649, 'Eric Smith'), (2706, 2715, 'Grace Kim'), (2732, 2744, 'Jason Kaniss'), (2765, 2776, 'Kevin Cline'), (2795, 2804, 'Rika Imai'), (2821, 2832, 'Todd DeCoo='), (2853, 2864, 'Beth Jensen'), (2883, 2896, 'Billi Harrill'), (2917, 2937, 'Martha Sumner-Kenney'), (2956, 2970, 'Phyllis Miller'), (2991, 3004, 'Sandy Olofson'), (3023, 3036, 'Theresa Byrne'), (3055, 3063, 'Danny M='), (3089, 3097, 'Denis Tu'), (3115, 3127, 'John A Ayres'), (3147, 3158, 'John Millar'), (3176, 3191, 'Julie Armstrong'), (3246, 3255, 'Max Brown'), (3273, 3287, 'Randy Cantrell'), (3307, 3318, 'Tracy Scott'), (3337, 3352, 'Charles T Muzzy'), (3403, 3415, 'Darren Espey'), (3434, 3448, 'Jessica White='), (3466, 3477, 'Kevin Brady'), (3494, 3505, 'Kirk Lenart'), (3519, 3525, 'Lisa ='), (3546, 3561, 'Margie Straight'), (3575, 3588, 'Mark L Schrab'), (3604, 3620, 'Souad Mahmassani'), (3639, 3652, 'Tammy Gilmore'), (3669, 3679, 'Teresa Mc='), (3702, 3713, 'Wes Dempsey'), (3730, 3743, 'Barry Feldman'), (3763, 3778, 'Catherine Huynh'), (4537, 4556, 'Phillip Allen=09=09'), (4791, 4795, 'IPAQ'), (4950, 4958, 'Ina Ran='), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 147, 'outlook.team'), (385, 400, 'Team/Corp/Enron'), (569, 573, 'Team'), (613, 637, 'Wilchynski/HR/Corp/Enron'), (653, 666, 'Ward/NA/Enron'), (683, 698, 'Hill/Corp/Enron'), (712, 731, 'Galloway/Corp/Enron'), (754, 761, 'A/Enron'), (774, 786, 'Pham/HOU/ECT'), (800, 811, 'Jones/ENRON'), (832, 848, 'Mills/Corp/Enron'), (863, 874, 'Rabon/ENRON'), (922, 938, 'Baumbach/HOU/ECT'), (948, 958, 'Doan/ENRON'), (985, 997, 'free/HOU/ECT'), (1013, 1025, 'Love/HOU/ECT'), (1044, 1055, 'Kulic/ENRON'), (1077, 1095, 'Guggenheim/HOU/ECT'), (1111, 1126, 'Chavez/NA/Enron'), (1141, 1151, 'Bike/Enron'), (1171, 1185, 'Frank/NA/Enron'), (1216, 1217, 'T'), (1235, 1252, 'Hernandez/HOU/ECT'), (1268, 1283, 'Shim/Corp/Enron'), (1298, 1314, 'Royed/Corp/Enron'), (1326, 1340, 'Keiser/HOU/ECT'), (1352, 1366, 'Singla/HOU/ECT'), (1382, 1394, 'Clause/ENRON'), (1417, 1432, 'Fowler/NA/Enron'), (1449, 1462, 'Lilly/HOU/ECT'), (1475, 1491, 'Johnson/NA/Enron'), (1505, 1518, 'Garza/HOU/ECT'), (1534, 1548, 'Ryder/NA/Enron'), (1561, 1575, "O'Rourke/ENRON"), (1601, 1608, 'A/Enron'), (1622, 1635, 'Ermis/HOU/ECT'), (1648, 1661, 'Tholt/HOU/ECT'), (1678, 1690, 'eyer/HOU/ECT'), (1702, 1715, 'Holst/HOU/ECT'), (1729, 1744, 'Lenhart/HOU/ECT'), (1757, 1772, 'Grigsby/HOU/ECT'), (1786, 1801, 'Sanchez/HOU/ECT'), (1848, 1859, 'Gay/HOU/ECT'), (1870, 1888, 'Kuykendall/HOU/ECT'), (1909, 1914, 'U/ECT'), (1927, 1941, 'Travis/HOU/ECT'), (1957, 1971, 'Gasper/HOU/ECT'), (1988, 2004, 'Fletcher/HOU/ECT'), (2017, 2035, 'Wukasch/Corp/Enron'), (2063, 2074, 'lin/HOU/ECT'), (2085, 2100, 'Potter/NA/Enron'), (2116, 2129, 'Baker/HOU/ECT'), (2145, 2162, 'Calcagno/NA/Enron'), (2177, 2198, 'Stromquist/Corp/Enron'), (2230, 2241, 'DEVELOPMENT'), (2267, 2283, 'Anderson/HOU/ECT'), (2296, 2308, 'Horn/HOU/ECT'), (2322, 2339, 'Gerard/Corp/Enron'), (2353, 2366, 'Lira/NA/Enron'), (2400, 2411, 'DEVELOPMENT'), (2448, 2451, 'ron'), (2463, 2478, 'Nguyen/NA/Enron'), (2491, 2504, 'Pace/NA/Enron'), (2525, 2536, 'ci/NA/Enron'), (2552, 2567, 'Guerra/NA/Enron'), (2616, 2631, 'Ryan/Corp/Enron'), (2679, 2683, 'ions'), (2712, 2724, 'Kim/NA/Enron'), (2738, 2750, 'Kaniss/ENRON'), (2771, 2787, 'Cline/Corp/Enron'), (2800, 2813, 'Imai/NA/Enron'), (2833, 2845, 'k/Corp/Enron'), (2858, 2875, 'Jensen/NPNG/Enron'), (2924, 2948, 'Sumner-Kenney/NPNG/Enron'), (2964, 2981, 'Miller/NPNG/Enron'), (2997, 3015, 'Olofson/NPNG/Enron'), (3031, 3047, 'Byrne/NPNG/Enron'), (3064, 3081, 'cCarty/ET&S/Enron'), (3095, 3107, 'Tu/FGT/Enron'), (3122, 3137, 'Ayres/FGT/Enron'), (3152, 3168, 'Millar/FGT/Enron'), (3182, 3202, 'Armstrong/Corp/Enron'), (3219, 3238, 'Schroeder/FGT/Enron'), (3250, 3265, 'Brown/OTS/Enron'), (3295, 3299, 'nron'), (3313, 3329, 'Scott/Corp/Enron'), (3347, 3360, 'Muzzy/HOU/ECT'), (3373, 3395, 'Pendergrass/Corp/Enron'), (3410, 3426, 'Espey/Corp/Enron'), (3450, 3458, 'NA/Enron'), (3472, 3486, 'Brady/NA/Enron'), (3499, 3513, 'Lenart/HOU/ECT'), (3526, 3540, 'Kinsey/HOU/ECT'), (3553, 3569, 'Straight/HOU/ECT'), (3582, 3596, 'Schrab/HOU/ECT'), (3610, 3631, 'Mahmassani/Corp/Enron'), (3645, 3661, 'Gilmore/NA/Enron'), (3680, 3694, 'Omber/NA/Enron'), (3706, 3722, 'Dempsey/NA/Enron'), (3736, 3753, 'Feldman/NYC/MGUSA'), (3773, 3787, 'Huynh/NA/Enron')], 'DATE': [(63, 79, 'Mon  14 May 2001'), (80, 88, '13:39:00'), (448, 457, 'Jan2002 1'), (4057, 4070, 'a few minutes'), (5554, 5571, 'normal work hours'), (68, 74, '14 May'), (199, 203, '5-14'), (222, 225, '1.0'), (448, 455, 'Jan2002'), (580, 590, '05/11/2001'), (3843, 3847, '5-14')], 'PHONE': [(13, 34, '5468446.1075855378133'), (74, 82, ' 2001 13'), (86, 94, '00 -0700'), (198, 203, ' 5-14'), (586, 593, '2001 01'), (3813, 3816, '092'), (3842, 3847, ' 5-14'), (4308, 4313, ' 2000'), (4353, 4358, ' 2000'), (4593, 4600, '0937041')], 'ADDRESS': []}
+03/08/2024 23:54:20 - root - DEBUG - preprocessed text Message-ID: <5468446.1075855378133.JavaMail.evans@thyme>
+Date: Mon  14 May 2001 13:39:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: outlook.team@enron.com
+Subject: Re: 2- SURVEY/INFORMATION EMAIL 5-14- 01
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-From: Phillip K Allen
+X-To: Outlook Migration Team <Outlook Migration Team/Corp/Enron@ENRON>
+X-cc: 
+X-bcc: 
+X-Folder:  Phillip Allen Jan2002 1 Allen  Phillip K. 'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+
+
+
+
+
+Outlook Migration Team@ENRON
+05/11/2001 01:49 PM
+To:=09Cheryl Wilchynski/HR/Corp/Enron@ENRON  Cindy R Ward/NA/Enron@ENRON  J=
+o Ann Hill/Corp/Enron@ENRON  Sonja Galloway/Corp/Enron@Enron  Bilal Bajwa/N=
+A/Enron@Enron  Binh Pham/HOU/ECT@ECT  Bradley Jones/ENRON@enronXgate  Bruce=
+ Mills/Corp/Enron@ENRON  Chance Rabon/ENRON@enronXgate  Chuck Ames/NA/Enron=
+@Enron  David Baumbach/HOU/ECT@ECT  Jad Doan/ENRON@enronXgate  O'Neal D Win=
+free/HOU/ECT@ECT  Phillip M Love/HOU/ECT@ECT  Sladana-Anna Kulic/ENRON@enro=
+nXgate  Victor Guggenheim/HOU/ECT@ECT  Alejandra Chavez/NA/Enron@ENRON  Ann=
+e Bike/Enron@EnronXGate  Carole Frank/NA/Enron@ENRON  Darron C Giron/HOU/EC=
+T@ECT  Elizabeth L Hernandez/HOU/ECT@ECT  Elizabeth Shim/Corp/Enron@ENRON  =
+Jeff Royed/Corp/Enron@ENRON  Kam Keiser/HOU/ECT@ECT  Kimat Singla/HOU/ECT@E=
+CT  Kristen Clause/ENRON@enronXgate  Kulvinder Fowler/NA/Enron@ENRON  Kyle =
+R Lilly/HOU/ECT@ECT  Luchas Johnson/NA/Enron@Enron  Maria Garza/HOU/ECT@ECT=
+  Patrick Ryder/NA/Enron@Enron  Ryan O'Rourke/ENRON@enronXgate  Yuan Tian/N=
+A/Enron@ENRON  Frank Ermis/HOU/ECT@ECT  Jane M Tholt/HOU/ECT@ECT  Jay Reitm=
+eyer/HOU/ECT@ECT  Keith Holst/HOU/ECT@ect  Matthew Lenhart/HOU/ECT@ECT  Mik=
+e Grigsby/HOU/ECT@ECT  Monique Sanchez/HOU/ECT@ECT  Phillip K Allen/HOU/ECT=
+@ECT  Randall L Gay/HOU/ECT@ECT  Tori Kuykendall/HOU/ECT@ECT  Ina Norman/HO=
+U/ECT@ECT  Jackie Travis/HOU/ECT@ECT  Michael J Gasper/HOU/ECT@ECT  Brenda =
+H Fletcher/HOU/ECT@ECT  Jeanne Wukasch/Corp/Enron@ENRON  Mary Theresa Frank=
+lin/HOU/ECT@ECT  Mike Potter/NA/Enron@Enron  Natalie Baker/HOU/ECT@ECT  Suz=
+anne Calcagno/NA/Enron@Enron  Albert Stromquist/Corp/Enron@ENRON  Rajesh Ch=
+ettiar/ENRON DEVELOPMENT@ENRON DEVELOPMENT  Derek Anderson/HOU/ECT@ECT  Bra=
+d Horn/HOU/ECT@ECT  Camille Gerard/Corp/Enron@ENRON  Cathy Lira/NA/Enron@EN=
+RON  Daniel Castagnola/ENRON DEVELOPMENT@ENRON DEVELOPMENT  Eva Tow/Corp/En=
+ron@ENRON  Lam Nguyen/NA/Enron@Enron  Andy Pace/NA/Enron@Enron  Anna Santuc=
+ci/NA/Enron@Enron  Claudia Guerra/NA/Enron@ENRON  Clayton Vernon/Corp/Enron=
+@ENRON  David Ryan/Corp/Enron@ENRON  Eric Smith/Contractor/Enron Communicat=
+ions@Enron Communications  Grace Kim/NA/Enron@Enron  Jason Kaniss/ENRON@enr=
+onXgate  Kevin Cline/Corp/Enron@Enron  Rika Imai/NA/Enron@Enron  Todd DeCoo=
+k/Corp/Enron@Enron  Beth Jensen/NPNG/Enron@ENRON  Billi Harrill/NPNG/Enron@=
+ENRON  Martha Sumner-Kenney/NPNG/Enron@ENRON  Phyllis Miller/NPNG/Enron@ENR=
+ON  Sandy Olofson/NPNG/Enron@ENRON  Theresa Byrne/NPNG/Enron@ENRON  Danny M=
+cCarty/ET&S/Enron@Enron  Denis Tu/FGT/Enron@ENRON  John A Ayres/FGT/Enron@E=
+NRON  John Millar/FGT/Enron@Enron  Julie Armstrong/Corp/Enron@ENRON  Maggie=
+ Schroeder/FGT/Enron@ENRON  Max Brown/OTS/Enron@ENRON  Randy Cantrell/GCO/E=
+nron@ENRON  Tracy Scott/Corp/Enron@ENRON  Charles T Muzzy/HOU/ECT@ECT  Cora=
+ Pendergrass/Corp/Enron@ENRON  Darren Espey/Corp/Enron@ENRON  Jessica White=
+/NA/Enron@Enron  Kevin Brady/NA/Enron@Enron  Kirk Lenart/HOU/ECT@ECT  Lisa =
+Kinsey/HOU/ECT@ECT  Margie Straight/HOU/ECT@ECT  Mark L Schrab/HOU/ECT@ECT =
+ Souad Mahmassani/Corp/Enron@ENRON  Tammy Gilmore/NA/Enron@ENRON  Teresa Mc=
+Omber/NA/Enron@ENRON  Wes Dempsey/NA/Enron@Enron  Barry Feldman/NYC/MGUSA@M=
+GUSA  Catherine Huynh/NA/Enron@Enron
+cc:=09=20
+Subject:=092- SURVEY/INFORMATION EMAIL 5-14- 01
+
+Current Notes User:=20
+
+To ensure that you experience a successful migration from Notes to Outlook =
+ it is necessary to gather individual user information prior to your date o=
+f migration.  Please take a few minutes to completely fill out the followin=
+g survey. Double Click on document to put it in "Edit" mode. When you finis=
+h  simply click on the 'Reply With History' button then hit 'Send'  Your su=
+rvey will automatically be sent to the Outlook 2000 Migration Mailbox.
+
+Thank you.
+
+Outlook 2000 Migration Team
+
+---------------------------------------------------------------------------=
+-----------------------------------------------------------------
+
+Full Name:        Phillip Allen=09=09
+
+Login ID:  =09pallen
+
+Extension:  =0937041
+
+Office Location:  EB3210C
+
+What type of computer do you have?  (Desktop   Laptop   Both)  =09Both
+
+Do you have a PDA?  If yes  what type do you have:   (None  IPAQ  Palm Pilo=
+t  Jornada)  IPAQ
+
+Do you have permission to access anyone's Email/Calendar?  =09
+    If yes  who? =20
+
+Does anyone have permission to access your Email/Calendar?  =09Yes  Ina Ran=
+gel
+    If yes  who? =20
+
+Are you responsible for updating anyone else's address book?  =09
+    If yes  who? =20
+
+Is anyone else responsible for updating your address book? =20
+    If yes  who? =20
+
+Do you have access to a shared calendar? =20
+    If yes  which shared calendar? =20
+
+Do you have any Distribution Groups that Messaging maintains for you (for m=
+ass mailings)? =20
+    If yes  please list here: =20
+
+Please list all Notes databases applications that you currently use: =20
+
+In our efforts to plan the exact date/time of your migration  we also will =
+need to know:
+
+What are your normal work hours?  From:   7   To:      5
+
+Will you be out of the office in the near future for vacation  leave  etc?
+       If so  when?        From (MM/DD/YY):      To (MM/DD/YY):     =20
+
+
+
+
+03/08/2024 23:54:20 - root - DEBUG - printing stats to stdout/ ouput directory
+03/08/2024 23:54:20 - root - DEBUG - censored file written to output directory
+03/08/2024 23:54:20 - root - DEBUG - text preprocessing done
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with spacy done
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching started
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with regex done
+03/08/2024 23:54:20 - root - DEBUG - censoring done
+03/08/2024 23:54:20 - root - DEBUG - for file 3.txt censoring dictionary: {'PERSON': [(266, 281, 'Phillip K Allen'), (343, 364, 'Phillip Allen Jan2002'), (374, 386, "Phillip K. '"), (406, 411, 'Allen'), (426, 432, 'pallen'), (496, 503, 'Pauline'), (987, 994, 'Phillip'), (35, 49, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 141, 'jsmith'), (296, 302, 'jsmith')], 'DATE': [(63, 79, 'Fri  11 May 2001'), (80, 88, '11:26:00'), (68, 74, '11 May'), (179, 182, '1.0'), (357, 364, 'Jan2002')], 'PHONE': [(13, 34, '2594534.1075855378221'), (74, 82, ' 2001 11'), (86, 94, '00 -0700'), (546, 551, '3 000'), (556, 561, '5 000')], 'ADDRESS': []}
+03/08/2024 23:54:20 - root - DEBUG - preprocessed text Message-ID: <2594534.1075855378221.JavaMail.evans@thyme>
+Date: Fri  11 May 2001 11:26:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: jsmith@austintx.com
+Subject: 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Phillip K Allen
+X-To: jsmith <jsmith@austintx.com>
+X-cc: 
+X-bcc: 
+X-Folder:  Phillip Allen Jan2002 1 Allen  Phillip K. 'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+Let me know when you get the quotes from Pauline.  I am expecting to pay something in the $3 000 to $5 000 range.  I would like to see the quotes and a description of the work to be done.  It is my understanding that some rock will be removed and replaced with siding.  If they are getting quotes to put up new rock then we will need to clarify.
+
+Jacques is ready to drop in a dollar amount on the release.  If the negotiations stall  it seems like I need to go ahead and cut off the utilities.  Hopefully things will go smoothly.
+
+Phillip
+03/08/2024 23:54:20 - root - DEBUG - printing stats to stdout/ ouput directory
+03/08/2024 23:54:20 - root - DEBUG - censored file written to output directory
+03/08/2024 23:54:20 - root - DEBUG - text preprocessing done
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with spacy done
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching started
+03/08/2024 23:54:20 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/08/2024 23:54:20 - root - DEBUG - entity extraction with regex done
+03/08/2024 23:54:20 - root - DEBUG - censoring done
+03/08/2024 23:54:20 - root - DEBUG - for file 4.txt censoring dictionary: {'PERSON': [(267, 282, 'Phillip K Allen'), (344, 365, 'Phillip Allen Jan2002'), (368, 382, 'Allen  Phillip'), (407, 412, 'Allen'), (456, 476, 'Jeff \n\nJacques Craig'), (539, 543, 'Wade'), (548, 555, 'Phillip'), (36, 50, 'JavaMail.evans'), (108, 121, 'phillip.allen'), (136, 142, 'jsmith'), (297, 303, 'jsmith')], 'DATE': [(64, 80, 'Thu  10 May 2001'), (81, 89, '12:50:00'), (69, 75, '10 May'), (180, 183, '1.0'), (358, 365, 'Jan2002')], 'PHONE': [(13, 35, '19129466.1075855378242'), (75, 83, ' 2001 12'), (87, 95, '00 -0700')], 'ADDRESS': []}
+03/08/2024 23:54:20 - root - DEBUG - preprocessed text Message-ID: <19129466.1075855378242.JavaMail.evans@thyme>
+Date: Thu  10 May 2001 12:50:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: jsmith@austintx.com
+Subject: 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Phillip K Allen
+X-To: jsmith <jsmith@austintx.com>
+X-cc: 
+X-bcc: 
+X-Folder:  Phillip Allen Jan2002 1 Allen  Phillip K. 'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+Jeff 
+
+Jacques Craig will draw up a release.  What is the status on the quote from Wade?  
+
+Phillip
+03/08/2024 23:54:20 - root - DEBUG - printing stats to stdout/ ouput directory
+03/08/2024 23:54:20 - root - DEBUG - censored file written to output directory
+03/08/2024 23:54:20 - root - DEBUG - text preprocessing done
+03/08/2024 23:54:21 - root - DEBUG - entity extraction with spacy done
+03/08/2024 23:54:21 - assignment1.regex_helper - DEBUG - regex matching started
+03/08/2024 23:54:21 - assignment1.regex_helper - DEBUG - regex matching initial dictionary <class 'list'>
+03/08/2024 23:54:21 - root - DEBUG - entity extraction with regex done
+03/08/2024 23:54:21 - root - DEBUG - censoring done
+03/08/2024 23:54:21 - root - DEBUG - for file 5.txt censoring dictionary: {'PERSON': [(273, 288, 'Phillip K Allen'), (295, 310, 'John J Lavorato'), (312, 327, 'John J Lavorato'), (378, 391, 'Phillip Allen'), (402, 421, "Allen  Phillip K. '"), (36, 50, 'JavaMail.evans'), (107, 120, 'phillip.allen'), (135, 148, 'john.lavorato'), (319, 344, 'Lavorato/ENRON@enronXgate')], 'DATE': [(64, 79, 'Wed  9 May 2001'), (80, 88, '17:13:00'), (392, 401, 'Jan2002 1'), (69, 79, '9 May 2001'), (186, 189, '1.0'), (392, 399, 'Jan2002')], 'PHONE': [(13, 35, '23936138.1075855378263'), (74, 82, ' 2001 17'), (86, 94, '00 -0700')], 'ADDRESS': []}
+03/08/2024 23:54:21 - root - DEBUG - preprocessed text Message-ID: <23936138.1075855378263.JavaMail.evans@thyme>
+Date: Wed  9 May 2001 17:13:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: john.lavorato@enron.com
+Subject: Re:
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Phillip K Allen
+X-To: John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>
+X-cc: 
+X-bcc: 
+X-Folder:  Phillip Allen Jan2002 1 Allen  Phillip K. 'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+The west desk would like 2 analysts.
+03/08/2024 23:54:21 - root - DEBUG - printing stats to stdout/ ouput directory
+03/08/2024 23:54:21 - root - DEBUG - censored file written to output directory
