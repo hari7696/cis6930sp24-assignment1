@@ -65,6 +65,7 @@ def main(args):
 
 if __name__ == "__main__":
 
+    upload_log_file_to_s3()
     parser = argparse.ArgumentParser(description="Censor text files.")
     parser.add_argument(
         "--input", help="Input file pattern", required=False, default="text_files/*.txt"
