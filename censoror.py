@@ -1,4 +1,4 @@
-import en_core_web_trf
+import en_core_web_sm
 from assignment1.regex_helper import *
 from assignment1.utility_helpers import *
 import argparse
@@ -21,7 +21,7 @@ def censor(text_file, NER):
 
 def main(args):
 
-    NER = en_core_web_trf.load()
+    NER = en_core_web_sm.load()
     logging.debug("spacy model loaded")
 
     files = get_files_in_folder(args.input)
@@ -82,6 +82,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+    print(args)
 
     import logging
 
@@ -100,5 +101,9 @@ if __name__ == "__main__":
 
     main(args)
 
+    print(os.listdir(args.output))
+    print(os.listdir(args.input))
+
 
 # pipenv run python censoror.py --input '*.txt' --names --dates --phones --address --output 'files/' --stats stderr
+#en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}

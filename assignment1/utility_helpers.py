@@ -8,9 +8,9 @@ logger = logging.getLogger(__name__)
 def get_files_in_folder(file_type):
     files = []
     for file in glob.glob("{}".format(file_type)):
-        if os.path.isfile(file):
-            files.append(os.path.basename(file))
-    logger.debug("Files in folder: {}".format(files))
+        #if os.path.isfile(file):
+        files.append(os.path.basename(file))
+    #logger.debug("Files in folder: {}".format(files))
     return files
 
 
