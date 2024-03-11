@@ -10,7 +10,7 @@ import argparse
 import warnings
 
 warnings.filterwarnings("ignore")
-import en_core_web_sm
+import en_core_web_trf
 
 
 def test_redact():
@@ -122,7 +122,7 @@ def test_censor():
     The test text includes phone numbers, an international number, and random numbers.
     The expected behavior is that the censor function should identify and censor the phone numbers.
 
-    This test case uses the en_core_web_sm model from the spaCy library to perform named entity recognition (NER).
+    This test case uses the en_core_web_trf model from the spaCy library to perform named entity recognition (NER).
 
     The assert statement checks if the length of the 'PHONE' key in the returned dictionary is equal to 3,
     indicating that three phone numbers were correctly identified and censored.
@@ -132,6 +132,6 @@ def test_censor():
     text = """this is my phone number 8333 0878 09 and my international 3522133773 and random numeber 123456789
         the meeting is at empire state building
         you can send a mail to  stoneridge apartments, florida"""
-    NER = en_core_web_sm.load()
+    NER = en_core_web_trf.load()
     temp_dict = censor(text, NER)
     assert len(temp_dict["PHONE"]) == 3

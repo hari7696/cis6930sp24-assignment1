@@ -114,35 +114,6 @@ def print_file_entity_stats(file, args, dict_ent, print_status):
     return format_string
 
 
-def upload_log_file_to_s3():
-
-    # print("s3 called")
-    # Specify your AWS credentials
-    aws_access_key_id = "***REMOVED***"
-    aws_secret_access_key = "***REMOVED***"
-    # aws_session_token = 'YOUR_AWS_SESSION_TOKEN'  # Optional, only required if using temporary credentials
-
-    # Initialize a session using your AWS credentials
-    session = boto3.Session(
-        aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key,
-    )
-
-    # Create an S3 client using the session
-    s3_client = session.client("s3")
-
-    # Specify the local file path and the target S3 bucket and key
-    local_file_path = "tests/assignment1.log"
-    bucket_name = "deassignment"
-    s3_key = datetime.now().strftime("%Y%m%d-%H%M%S") + ".log"
-
-    # Upload the file to the S3 bucket
-    s3_client.upload_file(local_file_path, bucket_name, s3_key)
-
-    # print(f'File {local_file_path} has been uploaded to s3://{bucket_name}/{s3_key}')
-    # raise ValueError("some issue with uploading to s3")
-
-
 def merge_overlapping_substrings(substrings):
     """
     Merges overlapping substrings within a list of substrings. (Handling the side effects of regex match and NER entitiy extraction)
