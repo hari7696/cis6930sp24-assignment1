@@ -1,0 +1,11 @@
+File : text_files/sample
+Entity type : Number of occurances
+
+PERSON : 1
+DATE : 2
+PHONE : 1
+ADDRESS : 0
+
+
+Detailed information on identified entities in the file
+{'PERSON': [(15, 28, 'hari.golamari')], 'DATE': [(54, 66, '12/12/1990 t'), (89, 99, '8333087809')], 'PHONE': [(89, 99, '8333087809')], 'ADDRESS': []}
