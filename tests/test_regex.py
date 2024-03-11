@@ -1,6 +1,6 @@
 import pytest
 from assignment1.regex_helper import ner_ent, regex_match
-import en_core_web_sm
+import en_core_web_trf
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -18,7 +18,7 @@ def test_ner_ent():
     Raises:
         AssertionError: If the extracted named entities do not match the expected values.
     """
-    NER = en_core_web_sm.load()
+    NER = en_core_web_trf.load()
     text = "John Doe was born on 12/12/1990 in New York. His phone number is 123-456-7890 and his email is"
     text_ent = ner_ent(NER, text)
     assert (

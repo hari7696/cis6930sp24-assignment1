@@ -201,7 +201,7 @@ Extracts named entities from the given text using a named entity recognition (NE
 
     Example:
         >>> import spacy
-        >>> nlp = spacy.load("en_core_web_sm")
+        >>> nlp = spacy.load("en_core_web_trf")
         >>> text = "John Doe lives in New York and works at Google."
         >>> entities = ner_ent(nlp, text)
         >>> print(entities)

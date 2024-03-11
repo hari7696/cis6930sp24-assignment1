@@ -1,4 +1,4 @@
-import en_core_web_sm
+import en_core_web_trf
 from assignment1.regex_helper import *
 from assignment1.utility_helpers import *
 import argparse
@@ -78,7 +78,7 @@ def main(args):
     Note: The function assumes that the necessary modules and functions are imported.
     """
 
-    NER = en_core_web_sm.load()
+    NER = en_core_web_trf.load()
     logging.info("spacy model loaded")
 
     files = get_files_in_folder(args.input)
@@ -130,10 +130,16 @@ def main(args):
             sys.stderr.write("printing stats to stderr")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
             sys.stderr.write(format_string)
+            sys.stdout.write("\n")
+            sys.stderr.write("Detailed information on identified entities in the file")
+            sys.stderr.write(str(dict_ent))
         elif args.stats == "stdout":
             sys.stdout.write("printing stats to stderr")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
             sys.stdout.write(format_string)
+            sys.stdout.write("\n")
+            sys.stdout.write("Detailed information on identified entities in the file")
+            sys.stdout.write(str(dict_ent))
         else:
             logging.info("stats is a file, writing to the given stats file")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
@@ -157,7 +163,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Censor text files.")
     args = parser.parse_known_args()
     logging.info("PRE RUN unparsed Args parsing failed {}".format(args))
-    upload_log_file_to_s3()
+    #upload_log_file_to_s3()
 
     try:
         parser.add_argument(
@@ -197,7 +203,7 @@ if __name__ == "__main__":
         logging.error("Error occurred {}".format(e), exc_info=True)
         args = parser.parse_known_args()
         logging.info("Args parsing failed {}".format(args))
-        upload_log_file_to_s3()
+        #upload_log_file_to_s3()
 
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 # en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
