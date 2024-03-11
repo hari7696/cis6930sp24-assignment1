@@ -42,8 +42,10 @@ def regex_match(text):
         match_dict["DATE"].append((match.start(), match.end(), match.group()))
 
     # phone match
-    pattern = r"\b(?:\+?\d{1,3}[-.\s]?)?(?:\(\d{1,3}\)|\d{1,3})?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}\b"
+    pattern = r"\b(?!(?:\+?\d{1,3}[-.\s]?)?(?:19[5-9]\d|20[0-2]\d))((?:\+?\d{1,3}[-.\s]?)?(?:\(\d{1,4}\)|\d{1,4})[-.\s]?\d{1,4}[-.\s]?\d{1,4}(?:[-.\s]?\d{1,4})?)(?<!19[5-9]\d|20[0-2]\d)\b"
+
     for match in re.finditer(pattern, text):
-        match_dict["PHONE"].append((match.start(),match.end(),  match.group()))
+        if len(match.group()) >= 7:
+            match_dict["PHONE"].append((match.start(), match.end(), match.group()))
 
     return match_dict
