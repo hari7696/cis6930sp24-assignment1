@@ -94,27 +94,28 @@ def upload_log_file_to_s3():
 
 
 def merge_overlapping_substrings(substrings):
-    # Sort the substrings by their start index
-    substrings.sort(key=lambda x: x[0])
+    def merge_once(substrings):
+        substrings.sort(key=lambda x: x[0])
+        merged_substrings = []
+        current_start, current_end, current_substr = substrings[0]
 
-    merged_substrings = []
-    current_start, current_end, current_substr = substrings[0]
+        for start, end, substr in substrings[1:]:
+            if start <= current_end:
+                current_end = max(current_end, end)
+                current_substr = substr if len(substr) > len(current_substr) else current_substr
+            else:
+                merged_substrings.append((current_start, current_end, current_substr))
+                current_start, current_end, current_substr = start, end, substr
 
-    for start, end, substr in substrings[1:]:
-        # Check if the current substring overlaps with the next one
-        if start <= current_end:
-            # Merge the overlapping substrings
-            current_end = max(current_end, end)
-            current_substr = (
-                substr if len(substr) > len(current_substr) else current_substr
-            )
-        else:
-            # Add the non-overlapping substring to the list
-            merged_substrings.append((current_start, current_end, current_substr))
-            current_start, current_end, current_substr = start, end, substr
+        merged_substrings.append((current_start, current_end, current_substr))
+        return merged_substrings
 
-    # Add the last substring to the list
-    merged_substrings.append((current_start, current_end, current_substr))
+    # Merge substrings until no further merges are possible
+    while True:
+        merged_substrings = merge_once(substrings)
+        if len(merged_substrings) == len(substrings):
+            break
+        substrings = merged_substrings
 
     return merged_substrings
 

@@ -13,4 +13,4 @@ def test_regex_match():
 
     text = "This is mailid hari.golamari@gmail.com and this is my phone number 8333087809, I born on 12/12/1990"
     match_dict = regex_match(text)
-    assert match_dict['PERSON'][0][-1] == 'hari.golamari' and match_dict['PHONE'][0][-1] == ' 8333087809' and match_dict['DATE'][0][-1] == '12/12/1990'
+    assert match_dict['PERSON'][0][-1] == 'hari.golamari' and match_dict['PHONE'][0][-1] == '8333087809' and match_dict['DATE'][0][-1] == '12/12/1990'

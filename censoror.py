@@ -142,4 +142,4 @@ if __name__ == "__main__":
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 # en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
 
-# pipenv run python censoror.py --name --dates --phones --address --stats stderr --output 'gradescopetestsout/' --input 'text_files/testdatesin'
+# pipenv run python censoror.py --name --dates --phones --address --stats stderr --output 'files/' --input 'text_files/sample'
