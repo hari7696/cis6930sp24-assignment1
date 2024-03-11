@@ -30,8 +30,14 @@ def censor(text_file, NER):
     """
     dict_spacy_ent = ner_ent(NER, text_file)
     logging.info("entity extraction with spacy done")
+
+    # call snorkel labelling_function decorated function
     dict_regex_ent = regex_match(text_file)
     logging.info("entity extraction with regex done")
+
+    # if returns ABSTAIN, then handling by creating a dictionary for the further code processing
+    if type(dict_regex_ent) is not dict:
+        dict_regex_ent = {"PERSON": [], "DATE": [], "PHONE": [], "ADDRESS": []}
 
     # combining dictionaries
     for key in ["PERSON", "DATE", "PHONE", "ADDRESS"]:

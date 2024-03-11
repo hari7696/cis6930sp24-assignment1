@@ -48,6 +48,8 @@ The goal is to create a redacted version of the dataset by hiding these key enti
 ### Redaction method
     The sensitive information is replaced with a full block character (U+2588)
 
+    Also if the entity have spaces in them like "Allen Philip k" , I chose to redact the spaces too, because I dont want to give any information on the possible number of characters in first name and last name, thus avoiding giving out some sensitive related to number of chatacters in first and last names.
+
 
 ### Environment setup
 Run the follwing pipenv command to create the required environment
@@ -358,4 +360,21 @@ Bug:
 1. In the current implementation, there is a problem with identifying phone numbers and dates accurately. The approach of using a dateparser library and regex to identify patterns is not foolproof. Sometimes, phone numbers are incorrectly identified as dates and vice versa. This issue needs to be addressed to improve the accuracy of pattern identification.
 2. Assumed that the spacy trf model would be able to identify the address and locations with decent accuracy
 3. The spacy sometimes skips the names which have hypen in them (ex. Allen-p ) 
+
+## Snorkel Usage
+
+1. I didnt get any opportunity to use snorkel LFApplier or LabelModel. But I used to snorkel's labeling_function to decorate my regex_match function. The function will ABSTAIN if it doesnt find revelant results rather than giving any random lale.
+
+    ```
+    @labeling_function()
+    def regex_match(text):
+        ...
+        ...
+        ..
+        if len(match_dict['PERSON'])>0 or len(match_dict['ADDRESS'])>0 or len(match_dict['PHONE'])>0 or len(match_dict['DATE'])>0:
+            return match_dict
+        else:
+            ABSTAIN
+
+    ```
 

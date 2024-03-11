@@ -1,0 +1,11 @@
+File : text_files/sample
+Entity type : Number of occurances
+
+PERSON : 0
+DATE : 0
+PHONE : 0
+ADDRESS : 0
+
+
+Detailed information on identified entities in the file
+{'PERSON': [], 'DATE': [], 'PHONE': [], 'ADDRESS': []}

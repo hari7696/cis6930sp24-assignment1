@@ -1,6 +1,7 @@
 import re
 import logging
 from dateparser.search import search_dates
+from snorkel.labeling import labeling_function
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +44,7 @@ def ner_ent(NER, text):
             dict_ent[item.label_].append((item.start_char, item.end_char, item.text))
     return dict_ent
 
-
+@labeling_function()
 def regex_match(text):
     """
     Matches and extracts specific patterns from the given text using regular expressions and dateparser.
@@ -79,7 +80,7 @@ def regex_match(text):
     """
 
     match_dict = {"PERSON": [], "DATE": [], "PHONE": [], "ADDRESS": []}
-
+    ABSTAIN = -1
     logger.info("regex matching started")
     logger.info(
         "regex matching initial dictionary {}".format(type(match_dict["PERSON"]))
@@ -115,4 +116,7 @@ def regex_match(text):
         if len(match.group()) >= 7:
             match_dict["PHONE"].append((match.start(), match.end(), match.group()))
 
-    return match_dict
+    if len(match_dict['PERSON'])>0 or len(match_dict['ADDRESS'])>0 or len(match_dict['PHONE'])>0 or len(match_dict['DATE'])>0:
+        return match_dict
+    else:
+        ABSTAIN
