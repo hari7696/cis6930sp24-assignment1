@@ -58,7 +58,11 @@ Run the follwing pipenv command to create the required environment
 
 ### How to run
 
-Uploading 20240311-2002-54.1730757.mp4…
+
+
+https://github.com/hari7696/cis6930sp24-assignment1/assets/148893192/0e488f16-2c7d-4ac7-8653-f3815d310e35
+
+
 
 Run the follwing pipenv commands to execute the program
 
