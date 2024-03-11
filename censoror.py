@@ -6,7 +6,27 @@ import os
 
 
 def censor(text_file, NER):
+    """
+    Censors sensitive information from a given text file using named entity recognition (NER).
 
+    Args:
+        text_file (str): The path to the text file to be processed.
+        NER (str): The named entity recognition (NER) method to be used. This can be either "spacy" or "regex".
+
+    Returns:
+        dict: A dictionary containing the censored entities extracted from the text file. The dictionary has the following keys:
+            - "PERSON": A list of censored person names.
+            - "DATE": A list of censored dates.
+            - "PHONE": A list of censored phone numbers.
+            - "ADDRESS": A list of censored addresses.
+
+    Raises:
+        None
+
+    Example Usage:
+        censor("path/to/text_file.txt", "spacy")
+        {'PERSON': ['John Doe', 'Jane Smith'], 'DATE': ['2022-01-01'], 'PHONE': ['555-1234'], 'ADDRESS': ['123 Main St']}
+    """
     dict_spacy_ent = ner_ent(NER, text_file)
     logging.info("entity extraction with spacy done")
     dict_regex_ent = regex_match(text_file)
@@ -16,17 +36,53 @@ def censor(text_file, NER):
     for key in ["PERSON", "DATE", "PHONE", "ADDRESS"]:
         dict_spacy_ent[key].extend(dict_regex_ent[key])
 
+    for key in dict_spacy_ent.keys():
+        dict_spacy_ent[key] = list(set(dict_spacy_ent[key]))    
+
     return dict_spacy_ent
 
 
 def main(args):
 
+    """
+    The main function of the censoror.py script.
+
+    Args:
+        args: An object containing the command-line arguments passed to the script.
+
+    Returns:
+        None
+
+    Raises:
+        None
+
+    This function performs the main logic of the script. It loads the spaCy model, preprocesses the text,
+    performs censoring, writes the censored text to an output file, and prints statistics to the standard output
+    or a specified stats file.
+
+    The function takes the following steps:
+    1. Loads the spaCy model.
+    2. Retrieves the list of files in the input directory.
+    3. Creates the output directory if it doesn't exist.
+    4. Iterates over each file in the input directory.
+    5. Reads the contents of the file.
+    6. Preprocesses the text by replacing certain characters.
+    7. Performs censoring on the preprocessed text using the loaded spaCy model and regex matching.
+    8. Merges overlapping substrings in the censoring dictionary.
+    9. Prints the censoring dictionary and preprocessed text to the log.
+    10. Redacts the original text using the censoring dictionary.
+    11. Writes the censored text to a file in the output directory.
+    12. Prints the path of the written file to the log.
+    13. Prints the list of files in the output directory to the log.
+    14. Prints the statistics to the standard output or a specified stats file.
+
+    Note: The function assumes that the necessary modules and functions are imported.
+    """
+
     NER = en_core_web_sm.load()
     logging.info("spacy model loaded")
 
     files = get_files_in_folder(args.input)
-
-    print("something", files)
 
     if not os.path.exists(args.output):
         logging.info("creating output directory")
@@ -78,7 +134,7 @@ def main(args):
             logging.info("stats is a file, writing to the given stats file")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
             with open(args.stats, "w", encoding="utf-8") as f:
-                f.write(original_text)
+                f.write(format_string)
             logging.info("censored file written to output directory")
 
 
@@ -91,7 +147,7 @@ if __name__ == "__main__":
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
         filename="tests/assignment1.log",
-        filemode="w",
+        filemode="a",
     )
 
     parser = argparse.ArgumentParser(description="Censor text files.")
@@ -142,4 +198,4 @@ if __name__ == "__main__":
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 # en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
 
-# pipenv run python censoror.py --name --dates --phones --address --stats stderr --output 'files/' --input 'text_files/sample'
+# pipenv run python censoror.py --name --dates --phones --address --stats 'tests/sample.txt' --output 'files/' --input 'text_files/sample'
