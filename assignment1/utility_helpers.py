@@ -3,6 +3,7 @@ import glob
 import logging
 import boto3
 from datetime import datetime
+from snorkel.labeling import labeling_function
 
 logger = logging.getLogger(__name__)
 

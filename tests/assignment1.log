@@ -1,0 +1,18 @@
+03/11/2024 16:31:48 - root - INFO - PRE RUN unparsed Args parsing failed (Namespace(), ['--name', '--dates', '--phones', '--address', '--stats', 'tests/sample_stats.txt', '--output', 'files/', '--input', 'text_files/sample'])
+03/11/2024 16:31:48 - root - INFO - starting main
+03/11/2024 16:31:50 - root - INFO - spacy model loaded
+03/11/2024 16:31:50 - root - INFO - text preprocessing done
+03/11/2024 16:31:50 - root - INFO - entity extraction with spacy done
+03/11/2024 16:31:50 - root - INFO - entity extraction with regex done
+03/11/2024 16:31:50 - root - INFO - censoring done
+03/11/2024 16:31:50 - root - INFO - for file text_files/sample censoring dictionary: {'PERSON': [], 'DATE': [], 'PHONE': [], 'ADDRESS': []}
+03/11/2024 16:31:50 - root - INFO - preprocessed text This is mailid hari.golamari@gmail.com and  I born on 12/12/1990 this is my phone number 8333087809 
+03/11/2024 16:31:50 - root - INFO - printing stats to stdout/ ouput directory
+03/11/2024 16:31:50 - root - INFO - file written to a path files/sample.censored
+03/11/2024 16:31:50 - root - INFO - written to output dir files in dir are ['sample.censored']
+03/11/2024 16:31:50 - root - INFO - censored file written to output directory
+03/11/2024 16:31:50 - root - INFO - stats is a file, writing to the given stats file
+03/11/2024 16:31:50 - root - INFO - censored file written to output directory
+03/11/2024 16:31:50 - root - INFO - main ended
+03/11/2024 16:31:50 - root - INFO - censoring done
+03/11/2024 16:31:50 - root - INFO - output dir ['sample.censored']
