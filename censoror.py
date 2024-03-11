@@ -44,23 +44,31 @@ def main(args):
         logging.info("text preprocessing done")
 
         dict_ent = censor(preprocess_text, NER)
+        for key in dict_ent.keys():
+            if len(dict_ent[key]) > 1:
+                dict_ent[key] = merge_overlapping_substrings(dict_ent[key])
         logging.info("censoring done")
         logging.info("for file {} censoring dictionary: {}".format(file, dict_ent))
         logging.info("preprocessed text {}".format(preprocess_text))
 
-
         logging.info("printing stats to stdout/ ouput directory")
         original_text = redact(original_text, dict_ent, args)
         file_base = os.path.basename(file)
-        #print(file_base)
+        # print(file_base)
         with open(
             os.path.join(args.output, file_base + ".censored"),
             "w",
             encoding="utf-8",
         ) as f:
             f.write(original_text)
-        logging.info("file written to a path {}".format(os.path.join(args.output, file_base + ".censored")))
-        logging.info("written to output dir files in dir are {}".format(os.listdir(args.output)))
+        logging.info(
+            "file written to a path {}".format(
+                os.path.join(args.output, file_base + ".censored")
+            )
+        )
+        logging.info(
+            "written to output dir files in dir are {}".format(os.listdir(args.output))
+        )
         logging.info("censored file written to output directory")
 
         if args.stats == "stderr" or args.stats == "stdout":
@@ -69,18 +77,9 @@ def main(args):
         else:
             logging.info("stats is a file, writing to the given stats file")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
-            with open( args.stats, "w", encoding="utf-8") as f:
+            with open(args.stats, "w", encoding="utf-8") as f:
                 f.write(original_text)
             logging.info("censored file written to output directory")
-
-
-            # else:
-            #     logging.info("stats is a file, writing to the given stats file")
-            #     original_text = redact(original_text, dict_ent, args)
-            #     file_base = os.path.basename(file)
-            #     with open( os.path.join(args.output, args.stats), "w", encoding="utf-8") as f:
-            #         f.write(original_text)
-            #     logging.info("censored file written to output directory")
 
 
 if __name__ == "__main__":
@@ -91,8 +90,8 @@ if __name__ == "__main__":
         level=logging.INFO,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
-        filename="COLLABORATORS.md",
-        filemode="a",
+        filename="tests/assignment1.log",
+        filemode="w",
     )
 
     parser = argparse.ArgumentParser(description="Censor text files.")
@@ -102,11 +101,16 @@ if __name__ == "__main__":
 
     try:
         parser.add_argument(
-            "--input", help="Input file pattern", required=False, default="text_files/*.txt"
+            "--input",
+            help="Input file pattern",
+            required=False,
+            default="text_files/*.txt",
         )
         parser.add_argument("--names", action="store_true", help="Censor names")
         parser.add_argument("--dates", action="store_true", help="Censor dates")
-        parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
+        parser.add_argument(
+            "--phones", action="store_true", help="Censor phone numbers"
+        )
         parser.add_argument("--address", action="store_true", help="Censor addresses")
         parser.add_argument(
             "--output", help="Output directory", required=False, default="files/"
@@ -118,8 +122,6 @@ if __name__ == "__main__":
         )
 
         args = parser.parse_args()
-
-
 
         # # Perform the censoring based on the provided arguments
         # # print(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
