@@ -1,0 +1,54 @@
+03/11/2024 13:53:24 - root - INFO - PRE RUN unparsed Args parsing failed (Namespace(), ['--name', '--dates', '--phones', '--address', '--stats', 'stdout', '--output', 'files/', '--input', 'text_files/sample'])
+03/11/2024 13:53:26 - root - INFO - starting main
+03/11/2024 13:53:26 - root - INFO - spacy model loaded
+03/11/2024 13:53:26 - root - INFO - text preprocessing done
+03/11/2024 13:53:26 - root - INFO - entity extraction with spacy done
+03/11/2024 13:53:26 - assignment1.regex_helper - INFO - regex matching started
+03/11/2024 13:53:26 - assignment1.regex_helper - INFO - regex matching initial dictionary <class 'list'>
+03/11/2024 13:53:27 - root - INFO - entity extraction with regex done
+03/11/2024 13:53:27 - root - INFO - censoring done
+03/11/2024 13:53:27 - root - INFO - for file text_files/sample censoring dictionary: {'PERSON': [(15, 28, 'hari.golamari')], 'DATE': [(54, 66, '12/12/1990 t'), (89, 99, '8333087809')], 'PHONE': [(89, 99, '8333087809')], 'ADDRESS': []}
+03/11/2024 13:53:27 - root - INFO - preprocessed text This is mailid hari.golamari@gmail.com and  I born on 12/12/1990 this is my phone number 8333087809 
+03/11/2024 13:53:27 - root - INFO - printing stats to stdout/ ouput directory
+03/11/2024 13:53:27 - root - INFO - file written to a path files/sample.censored
+03/11/2024 13:53:27 - root - INFO - written to output dir files in dir are ['sample.censored']
+03/11/2024 13:53:27 - root - INFO - censored file written to output directory
+03/11/2024 13:53:27 - root - INFO - main ended
+03/11/2024 13:53:27 - root - INFO - censoring done
+03/11/2024 13:53:27 - root - INFO - output dir ['sample.censored']
+03/11/2024 13:54:02 - root - INFO - PRE RUN unparsed Args parsing failed (Namespace(), ['--name', '--dates', '--phones', '--address', '--stats', 'stdout', '--output', 'files/', '--input', 'text_files/sample'])
+03/11/2024 13:54:04 - root - INFO - starting main
+03/11/2024 13:54:04 - root - INFO - spacy model loaded
+03/11/2024 13:54:04 - root - INFO - text preprocessing done
+03/11/2024 13:54:04 - root - INFO - entity extraction with spacy done
+03/11/2024 13:54:04 - assignment1.regex_helper - INFO - regex matching started
+03/11/2024 13:54:04 - assignment1.regex_helper - INFO - regex matching initial dictionary <class 'list'>
+03/11/2024 13:54:05 - root - INFO - entity extraction with regex done
+03/11/2024 13:54:05 - root - INFO - censoring done
+03/11/2024 13:54:05 - root - INFO - for file text_files/sample censoring dictionary: {'PERSON': [(15, 28, 'hari.golamari')], 'DATE': [(54, 66, '12/12/1990 t'), (89, 99, '8333087809')], 'PHONE': [(89, 99, '8333087809')], 'ADDRESS': []}
+03/11/2024 13:54:05 - root - INFO - preprocessed text This is mailid hari.golamari@gmail.com and  I born on 12/12/1990 this is my phone number 8333087809 
+03/11/2024 13:54:05 - root - INFO - printing stats to stdout/ ouput directory
+03/11/2024 13:54:05 - root - INFO - file written to a path files/sample.censored
+03/11/2024 13:54:05 - root - INFO - written to output dir files in dir are ['sample.censored']
+03/11/2024 13:54:05 - root - INFO - censored file written to output directory
+03/11/2024 13:54:05 - root - INFO - main ended
+03/11/2024 13:54:05 - root - INFO - censoring done
+03/11/2024 13:54:05 - root - INFO - output dir ['sample.censored']
+03/11/2024 13:54:18 - root - INFO - PRE RUN unparsed Args parsing failed (Namespace(), ['--name', '--dates', '--phones', '--address', '--stats', 'stderr', '--output', 'files/', '--input', 'text_files/sample'])
+03/11/2024 13:54:19 - root - INFO - starting main
+03/11/2024 13:54:19 - root - INFO - spacy model loaded
+03/11/2024 13:54:19 - root - INFO - text preprocessing done
+03/11/2024 13:54:19 - root - INFO - entity extraction with spacy done
+03/11/2024 13:54:19 - assignment1.regex_helper - INFO - regex matching started
+03/11/2024 13:54:19 - assignment1.regex_helper - INFO - regex matching initial dictionary <class 'list'>
+03/11/2024 13:54:21 - root - INFO - entity extraction with regex done
+03/11/2024 13:54:21 - root - INFO - censoring done
+03/11/2024 13:54:21 - root - INFO - for file text_files/sample censoring dictionary: {'PERSON': [(15, 28, 'hari.golamari')], 'DATE': [(54, 66, '12/12/1990 t'), (89, 99, '8333087809')], 'PHONE': [(89, 99, '8333087809')], 'ADDRESS': []}
+03/11/2024 13:54:21 - root - INFO - preprocessed text This is mailid hari.golamari@gmail.com and  I born on 12/12/1990 this is my phone number 8333087809 
+03/11/2024 13:54:21 - root - INFO - printing stats to stdout/ ouput directory
+03/11/2024 13:54:21 - root - INFO - file written to a path files/sample.censored
+03/11/2024 13:54:21 - root - INFO - written to output dir files in dir are ['sample.censored']
+03/11/2024 13:54:21 - root - INFO - censored file written to output directory
+03/11/2024 13:54:21 - root - INFO - main ended
+03/11/2024 13:54:21 - root - INFO - censoring done
+03/11/2024 13:54:21 - root - INFO - output dir ['sample.censored']

@@ -1,6 +1,7 @@
 import re
 import logging
 from dateparser.search import search_dates
+
 logger = logging.getLogger(__name__)
 
 
@@ -44,7 +45,6 @@ def ner_ent(NER, text):
 
 
 def regex_match(text):
-    
     """
     Matches and extracts specific patterns from the given text using regular expressions and dateparser.
 
@@ -77,8 +77,6 @@ def regex_match(text):
           value is a list of tuples. Each tuple contains the start index, end index, and the matched pattern.
         - If no patterns are found, the function returns an empty dictionary.
     """
-    
-
 
     match_dict = {"PERSON": [], "DATE": [], "PHONE": [], "ADDRESS": []}
 
@@ -99,15 +97,16 @@ def regex_match(text):
     # for match in re.finditer(pattern, text):
     #     match_dict["DATE"].append((match.start(), match.end(), match.group()))
 
-    dates = search_dates(text, settings={'STRICT_PARSING': False})
+    dates = search_dates(text, settings={"STRICT_PARSING": False})
     for date in dates:
         search_key = date[0]
         # Create a regular expression pattern that allows for variable whitespace
-        pattern = re.compile(r'\s*'.join(re.escape(word) for word in search_key.split()))
+        pattern = re.compile(
+            r"\s*".join(re.escape(word) for word in search_key.split())
+        )
         for match in pattern.finditer(text):
             if len(match.group()) >= 4:
                 match_dict["DATE"].append((match.start(), match.end(), match.group()))
-
 
     # phone match
     pattern = r"\b(?!(?:\+?\d{1,3}[-.\s]?)?(?:19[5-9]\d|20[0-2]\d))((?:\+?\d{1,3}[-.\s]?)?(?:\(\d{1,4}\)|\d{1,4})[-.\s]?\d{1,4}[-.\s]?\d{1,4}(?:[-.\s]?\d{1,4})?)(?<!19[5-9]\d|20[0-2]\d)\b"
