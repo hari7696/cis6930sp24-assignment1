@@ -1,8 +1,9 @@
-import en_core_web_trf
+import en_core_web_sm
 from assignment1.regex_helper import *
 from assignment1.utility_helpers import *
 import argparse
 import os
+import glob
 
 
 def censor(text_file, NER):
@@ -21,7 +22,7 @@ def censor(text_file, NER):
 
 def main(args):
 
-    NER = en_core_web_trf.load()
+    NER = en_core_web_sm.load()
     logging.debug("spacy model loaded")
 
     files = get_files_in_folder(args.input)
@@ -67,10 +68,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input", help="Input file pattern", required=False, default="text_files/*.txt"
     )
-    parser.add_argument("--names", action="store_false", help="Censor names")
-    parser.add_argument("--dates", action="store_false", help="Censor dates")
-    parser.add_argument("--phones", action="store_false", help="Censor phone numbers")
-    parser.add_argument("--address", action="store_false", help="Censor addresses")
+    parser.add_argument("--names", action="store_true", help="Censor names")
+    parser.add_argument("--dates", action="store_true", help="Censor dates")
+    parser.add_argument("--phones", action="store_true", help="Censor phone numbers")
+    parser.add_argument("--address", action="store_true", help="Censor addresses")
     parser.add_argument(
         "--output", help="Output directory", required=False, default="files/"
     )
@@ -82,6 +83,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+    #print(args)
 
     import logging
 
@@ -100,5 +102,16 @@ if __name__ == "__main__":
 
     main(args)
 
+    current_directory = os.path.dirname(os.path.realpath(__file__))
 
-# pipenv run python censoror.py --input '*.txt' --names --dates --phones --address --output 'files/' --stats stderr
+    # directory_structure = f"Structure of {current_directory}:\n"
+    # directory_structure += get_directory_structure(current_directory)
+    logging.info("directory structure {}".format(os.listdir()))
+
+    logging.info("file in output folder {}".format(os.listdir(args.output)))
+
+    upload_log_file_to_s3()
+
+
+# pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
+#en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}
