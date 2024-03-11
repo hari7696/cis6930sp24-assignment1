@@ -22,8 +22,12 @@ def get_files_in_folder(file_type):
     list: A list of file paths that match the specified file type.
     """
     files = []
-    for file in glob.glob("{}".format(file_type)):
-        files.append(file)
+    if file_type.endswith("/"):
+        files = [os.path.join(file_type, file) for file in os.listdir(file_type)]
+    else:    
+        for file in glob.glob("{}".format(file_type)):
+            files.append(file)
+    logger.info("files in the folder are {}".format(files))
     return files
 
 
