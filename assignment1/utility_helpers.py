@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 import glob
 
+
 def get_files_in_folder(file_type):
     """
     Retrieves a list of files in a folder that match the specified file type.
@@ -31,7 +32,7 @@ def redact(text, dict_ent, args):
 
     Args:
         text (str): The input text to be redacted.
-        dict_ent (dict): A dictionary containing the entities to be redacted. The keys represent the entity labels, 
+        dict_ent (dict): A dictionary containing the entities to be redacted. The keys represent the entity labels,
         and the values are lists of tuples representing the start and end indices of each entity occurrence in the text.
         args (argparse.Namespace): An object containing the command line arguments. It should have the following attributes:
             - names (bool): If True, redact names.
@@ -69,7 +70,7 @@ def redact(text, dict_ent, args):
 
 def print_file_entity_stats(file, args, dict_ent, print_status):
     """
-    Prints the statistics of entity types found in a file and also 
+    Calculcates the statistics of entity types found in a file and
     returns the formatted string with entities count information.
 
     Args:
@@ -85,14 +86,10 @@ def print_file_entity_stats(file, args, dict_ent, print_status):
         >>> dict_ent = {'PERSON': ['John Doe', 'Jane Smith'], 'DATE': ['2022-01-01'], 'PHONE': ['123-456-7890']}
         >>> args = Namespace(names=True, dates=True, phones=True, address=False)
         >>> print_file_entity_stats('/path/to/file.txt', args, dict_ent, True)
-        File: /path/to/file.txt
-        Entity type :  Count
+        >>> print(temp)
 
-        PERSON  :  2
-        DATE  :  1
-        PHONE  :  1
+        File: /path/to/file.txt \n Entity type :  Number of occurances \n \n PERSON : 2 \n DATE : 1 \n PHONE : 1 \n
 
-        'PERSON : 2\nDATE : 1\nPHONE : 1\n'
     """
     redact_group_labels = []
     if args.names:
@@ -104,14 +101,14 @@ def print_file_entity_stats(file, args, dict_ent, print_status):
     if args.address:
         redact_group_labels.append("ADDRESS")
 
-    format_string = ""
+    format_string = "File : "
     format_string = format_string + file + "\n"
     format_string = format_string + "Entity type : " + "Number of occurances" + "\n"
     format_string += "\n"
     for key in dict_ent:
         if key in redact_group_labels:
-            if print_status:
-                print(key, " : ", len(dict_ent[key]))
+            # if print_status:
+            #     print(key, " : ", len(dict_ent[key]))
             format_string += key + " : " + str(len(dict_ent[key])) + "\n"
     format_string += "\n"
     return format_string
@@ -147,7 +144,6 @@ def upload_log_file_to_s3():
 
 
 def merge_overlapping_substrings(substrings):
-    
     """
     Merges overlapping substrings within a list of substrings. (Handling the side effects of regex match and NER entitiy extraction)
 
@@ -184,7 +180,9 @@ def merge_overlapping_substrings(substrings):
         for start, end, substr in substrings[1:]:
             if start <= current_end:
                 current_end = max(current_end, end)
-                current_substr = substr if len(substr) > len(current_substr) else current_substr
+                current_substr = (
+                    substr if len(substr) > len(current_substr) else current_substr
+                )
             else:
                 merged_substrings.append((current_start, current_end, current_substr))
                 current_start, current_end, current_substr = start, end, substr

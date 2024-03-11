@@ -138,8 +138,8 @@ Redacts sensitive information from a given text based on the provided dictionary
 
 ### print_file_entity_stats()
 
-Prints the statistics of entity types found in a file and also 
-    returns the formatted string with entities count information.
+Calculcates the statistics of entity types found in a file and
+returns the formatted string with entities count information.
 
     Args:
         file (str): The path of the file.
@@ -154,14 +154,9 @@ Prints the statistics of entity types found in a file and also
         >>> dict_ent = {'PERSON': ['John Doe', 'Jane Smith'], 'DATE': ['2022-01-01'], 'PHONE': ['123-456-7890']}
         >>> args = Namespace(names=True, dates=True, phones=True, address=False)
         >>> print_file_entity_stats('/path/to/file.txt', args, dict_ent, True)
-        File: /path/to/file.txt
-        Entity type :  Count
+        >>> print(temp)
 
-        PERSON  :  2
-        DATE  :  1
-        PHONE  :  1
-
-        'PERSON : 2\nDATE : 1\nPHONE : 1\n'
+        File: /path/to/file.txt \n Entity type :  Number of occurances \n \n PERSON : 2 \n DATE : 1 \n PHONE : 1 \n
 
 ### merge_overlapping_substrings()
 

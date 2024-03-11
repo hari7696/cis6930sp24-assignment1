@@ -3,7 +3,7 @@ from assignment1.regex_helper import *
 from assignment1.utility_helpers import *
 import argparse
 import os
-
+import sys
 
 def censor(text_file, NER):
     """
@@ -37,13 +37,12 @@ def censor(text_file, NER):
         dict_spacy_ent[key].extend(dict_regex_ent[key])
 
     for key in dict_spacy_ent.keys():
-        dict_spacy_ent[key] = list(set(dict_spacy_ent[key]))    
+        dict_spacy_ent[key] = list(set(dict_spacy_ent[key]))
 
     return dict_spacy_ent
 
 
 def main(args):
-
     """
     The main function of the censoror.py script.
 
@@ -127,9 +126,14 @@ def main(args):
         )
         logging.info("censored file written to output directory")
 
-        if args.stats == "stderr" or args.stats == "stdout":
-            logging.info("printing stats to stderr")
-            format_string = print_file_entity_stats(file, args, dict_ent, True)
+        if args.stats == "stderr":
+            sys.stderr.write("printing stats to stderr")
+            format_string = print_file_entity_stats(file, args, dict_ent, False)
+            sys.stderr.write(format_string)
+        elif args.stats == "stdout":
+            sys.stdout.write("printing stats to stderr")
+            format_string = print_file_entity_stats(file, args, dict_ent, False)
+            sys.stdout.write(format_string)
         else:
             logging.info("stats is a file, writing to the given stats file")
             format_string = print_file_entity_stats(file, args, dict_ent, False)
