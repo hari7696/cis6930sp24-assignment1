@@ -5,6 +5,7 @@ import argparse
 import os
 import sys
 
+
 def censor(text_file, NER):
     """
     Censors sensitive information from a given text file using named entity recognition (NER).
@@ -145,6 +146,9 @@ def main(args):
             format_string = print_file_entity_stats(file, args, dict_ent, False)
             with open(args.stats, "w", encoding="utf-8") as f:
                 f.write(format_string)
+                f.write("\n")
+                f.write("Detailed information on identified entities in the file\n")
+                f.write(str(dict_ent))
             logging.info("censored file written to output directory")
 
 
@@ -163,7 +167,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Censor text files.")
     args = parser.parse_known_args()
     logging.info("PRE RUN unparsed Args parsing failed {}".format(args))
-    #upload_log_file_to_s3()
+    # upload_log_file_to_s3()
 
     try:
         parser.add_argument(
@@ -197,13 +201,13 @@ if __name__ == "__main__":
 
         logging.info("censoring done")
         logging.info("output dir {}".format(os.listdir(args.output)))
-        upload_log_file_to_s3()
+        # upload_log_file_to_s3()
 
     except Exception as e:
         logging.error("Error occurred {}".format(e), exc_info=True)
         args = parser.parse_known_args()
         logging.info("Args parsing failed {}".format(args))
-        #upload_log_file_to_s3()
+        # upload_log_file_to_s3()
 
 # pipenv run python censoror.py --input 'text_files/*.txt' --names --dates --phones --address --output 'files/' --stats stderr
 # en_core_web_trf = {file = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.3/en_core_web_trf-3.7.3-py3-none-any.whl"}

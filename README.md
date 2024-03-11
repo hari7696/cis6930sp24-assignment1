@@ -19,7 +19,31 @@ The goal is to create a redacted version of the dataset by hiding these key enti
 2. Redacted version of files.
 3. a standard out/err/file giving stats on identified NERs
 
-#
+# The stdout/stderr format
+
+## structure 
+
+    File: file_name
+    ENTITIES : NUMBER OF OCCURANCES
+    PERSON : 0
+    DATE : 2
+    PHONE : 0
+    ADDRESS : 0 
+    
+    Detailed information on identified entities in the file
+    a dictionary showing the entity location and label in format {entity : [(string_start, string_end, actual_text)]}
+
+### sample output
+    File : text_files/sample
+    Entity type : Number of occurances
+
+    PERSON : 1
+    DATE : 1
+    PHONE : 1
+    ADDRESS : 0
+
+    Detailed information on identified entities in the file
+    {'PERSON': [(15, 28, 'hari.golamari')], 'DATE': [(54, 66, '12/12/1990')], 'PHONE': [(89, 99, '8333087809')], 'ADDRESS': []}
 
 ### Environment setup
 Run the follwing pipenv command to create the required environment
